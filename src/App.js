@@ -1,6 +1,6 @@
 import React from 'react';
 import './App.css';
-import { Route, BrowserRouter } from 'react-router-dom';
+import { Route, HashRouter } from 'react-router-dom';
 import Nav from './components/Nav/Nav'
 import Footer from './components/Footer/Footer';
 import News from './components/News/News';
@@ -16,7 +16,7 @@ const MessageContainer = React.lazy(() => import('./components/Message/MessageCo
 
 function App(props) {
    return (
-      <BrowserRouter>
+      <HashRouter>
          <div className="App">
             <HeaderContainer />
             <Nav />
@@ -58,7 +58,7 @@ function App(props) {
             </div>
             <Footer />
          </div>
-      </BrowserRouter>
+      </HashRouter>
 
    );
 }

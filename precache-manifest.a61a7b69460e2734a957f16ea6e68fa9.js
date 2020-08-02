@@ -1,14 +1,14 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "9c740f06ecb0502d9391b6fd47b1321c",
+    "revision": "6d23d2990a43919726337e66e3bf24ed",
     "url": "/Social-network-React-js/index.html"
   },
   {
-    "revision": "1b0f144e13b9292158de",
+    "revision": "df484e1be48a6806207e",
     "url": "/Social-network-React-js/static/css/2.2f33d48e.chunk.css"
   },
   {
-    "revision": "4c1940da52b093d0a12c",
+    "revision": "547ba14c17e666923d22",
     "url": "/Social-network-React-js/static/css/3.38fa3715.chunk.css"
   },
   {
@@ -16,32 +16,32 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/Social-network-React-js/static/css/4.9c5df861.chunk.css"
   },
   {
-    "revision": "5a90521ba15dbc494aa0",
+    "revision": "5f660f71d7b2616fb840",
     "url": "/Social-network-React-js/static/css/main.c63843bd.chunk.css"
   },
   {
-    "revision": "1b0f144e13b9292158de",
-    "url": "/Social-network-React-js/static/js/2.43d92dc0.chunk.js"
+    "revision": "df484e1be48a6806207e",
+    "url": "/Social-network-React-js/static/js/2.ae31b4d3.chunk.js"
   },
   {
     "revision": "c64c486544348f10a6d6c716950bc223",
-    "url": "/Social-network-React-js/static/js/2.43d92dc0.chunk.js.LICENSE.txt"
+    "url": "/Social-network-React-js/static/js/2.ae31b4d3.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "4c1940da52b093d0a12c",
-    "url": "/Social-network-React-js/static/js/3.2e891e97.chunk.js"
+    "revision": "547ba14c17e666923d22",
+    "url": "/Social-network-React-js/static/js/3.0b2ad3ab.chunk.js"
   },
   {
     "revision": "2123fec72a746f752051",
     "url": "/Social-network-React-js/static/js/4.44e73037.chunk.js"
   },
   {
-    "revision": "5a90521ba15dbc494aa0",
-    "url": "/Social-network-React-js/static/js/main.e254942e.chunk.js"
+    "revision": "5f660f71d7b2616fb840",
+    "url": "/Social-network-React-js/static/js/main.3c961c83.chunk.js"
   },
   {
-    "revision": "f787a8f6e1e3fe05db17",
-    "url": "/Social-network-React-js/static/js/runtime-main.55f3353c.js"
+    "revision": "9cf358a7bf9575d6a0e1",
+    "url": "/Social-network-React-js/static/js/runtime-main.42a0818c.js"
   },
   {
     "revision": "2dca3c788af036452912f76a8a6edff7",

@@ -8,6 +8,7 @@ const USER_PROFILE = 'USER_PROFILE'
 const SET_FOLLOWED_USER = 'SET-FOLLOWED-USER'
 const GET_USER_STATUS = 'GET_USER_STATUS'
 const CHANGE_MY_STATUS = 'CHANGE_MY_STATUS'
+const SET_MY_PHOTOS = 'SET_MY_PHOTOS'
 
 let initialState = {
    User: {},
@@ -182,6 +183,11 @@ let  PROFILE_REDUCER = (state = initialState, action) => {
             ...state,
             userStatus: action.status,
          }
+      case SET_MY_PHOTOS:
+         return{
+            ...state,
+            User: {...state.User, photos: {...action.photos}}
+         }
       default:
          return state;
    }
@@ -222,22 +228,29 @@ export let changeValueMyStatus = (status) => ({
    type: 'CHANGE_MY_STATUS',
    status,
 })
+let setMyPhotos = (photos) => ({
+   type: 'SET_MY_PHOTOS',
+   photos,
+})
 
-export const getUserProfileThankCreator= (userId) => {
-   return (dispatch) => {
+export const getUserProfileThankCreator= (userId) => (dispatch) => {
       userAPI.getUserProfile(userId).then(data => dispatch(setUserProfile(data)));
    }
-}
-export const getFollowThankCreator= (userId) => {
-   return (dispatch) => {
+
+export const getFollowThankCreator= (userId) => (dispatch) => {
       followedAPI.getFollow(userId).then(data => dispatch(setFollowedUser(data)));
    }
-}
-export const getUserStatus= (userId) => {
-   return (dispatch) => {
+
+export const getUserStatus= (userId) =>  (dispatch) => {
       userAPI.getUserStatus(userId).then(data => dispatch(UserStatus(data)));
    }
-}
 
+export const saveMyPhotoTC= (photo) => (dispatch) => {
+      userAPI.putMyPhoto(photo).then(data => {
+         if(data.resultCode === 0){
+            dispatch(setMyPhotos(data.data.photos))
+         }
+      })
+   }
 
 export default PROFILE_REDUCER;

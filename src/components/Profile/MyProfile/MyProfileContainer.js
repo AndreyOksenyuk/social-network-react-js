@@ -3,7 +3,7 @@ import MyProfile from './MyProfile';
 import { connect } from 'react-redux';
 import { compose } from 'redux';
 import { withRouter } from 'react-router-dom';
-import { getUserProfileThankCreator, getUserStatus, changeValueMyStatus } from '../../../Redux/profile-reducer';
+import { getUserProfileThankCreator, getUserStatus, changeValueMyStatus, saveMyPhotoTC } from '../../../Redux/profile-reducer';
 import { authMeThankCreator } from '../../../Redux/auth-reducer';
 import Preloader from '../../module/preloader'
 import { getAuthMe } from '../../../api';
@@ -46,6 +46,6 @@ export default compose(
    withAuthRedirect,
    connect(mapStateToProps, {
       getMyProfile: getUserProfileThankCreator,
-      authMeThankCreator, getUserStatus, changeValueMyStatus,
+      authMeThankCreator, getUserStatus, changeValueMyStatus, saveMyPhotoTC
    }),
 )(MyProfileContainer)

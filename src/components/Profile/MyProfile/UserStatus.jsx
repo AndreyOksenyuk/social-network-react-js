@@ -13,7 +13,7 @@ const UserStatus = (props) => {
       props.changeValueMyStatus(input.current.value)
    }
    return (
-      <div>
+      <>
       {edidMode 
          ? <div className = 'MyStatus' >
                {props.status === null
@@ -37,7 +37,7 @@ const UserStatus = (props) => {
       }
          
          
-      </div>
+      </>
    );
 }
 

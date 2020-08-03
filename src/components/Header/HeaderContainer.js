@@ -13,6 +13,7 @@ class HeaderContainer extends React.Component {
             logout={this.props.logoutThankCreator}
             isAuth = {this.props.isAuth}
             login = {this.props.login}
+            myPhoto={this.props.myPhoto}
          />
       );
    }
@@ -22,6 +23,7 @@ let mapStateToProps = (state) =>{
    return {
       isAuth: state.auth.isAuth,
       login: state.auth.login,
+      myPhoto: state.profilePage.User.photos
    }
 }
 

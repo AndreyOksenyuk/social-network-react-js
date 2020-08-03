@@ -62,8 +62,6 @@
    width: 300px;
    height: 300px;
    margin: 0 30px 30px 0;
-
-   cursor: pointer;
    #inputPhoto{
       display: none;
       position: absolute;
@@ -75,12 +73,13 @@
       top: 10px;
       right: 10px;
       width: 30px;
-      fill: rgb(104, 100, 100);
+      fill: rgba(0, 0, 0, 0.8);
       transition: all .1s linear;
       opacity: 0;
       cursor: pointer;
       &:hover{
-         fill: rgb(32, 32, 32);
+         fill:rgba(0, 0, 0, 0.4);
+         
       }
    }
    &:hover{

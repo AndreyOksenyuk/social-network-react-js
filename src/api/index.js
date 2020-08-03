@@ -47,9 +47,7 @@ export let userAPI = {
    putMyPhoto(photo) {
       const formData = new FormData()
       formData.append("image", photo)
-      return instance.put(`/profile/photo`, formData, {
-         headers: {'Content-Type': 'multipart/form-data'}
-      }).then(response => {
+      return instance.put(`/profile/photo`, formData, {}).then(response => {
          return response.data
       })
    },
@@ -67,3 +65,19 @@ export let postLogin = (email, password, rememberMe) => {
 export let deleteLogin = () => {
    return instance.delete(`/auth/login`) 
 }
+
+//API News
+const newskey = 'deca95af7ec24bd7881b9d59143b9780';
+let instanceNews = axios.create({ 
+   baseURL: 'https://newsapi.org/v2/'
+})
+
+export let newsAPI = {
+
+   getNewsSearch(country = 'ua'){
+      return  instanceNews.get(`top-headlines?country=${country}&apiKey=${newskey}`)
+   },
+}
+
+
+

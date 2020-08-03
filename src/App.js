@@ -3,9 +3,9 @@ import './App.css';
 import { Route, HashRouter } from 'react-router-dom';
 import Nav from './components/Nav/Nav'
 import Footer from './components/Footer/Footer';
-import News from './components/News/News';
+import News from './components/News/NewsContainer';
 import Music from './components/Music/Music';
-import Setting from './components/Settings/Settings';
+import Setting from './components/Settings/SettingsContainer';
 import UsersContainer from './components/Users/UsersContainer';
 import HeaderContainer from './components/Header/HeaderContainer';
 import LoginContainer from './components/Authorization/Login/LoginContainer';

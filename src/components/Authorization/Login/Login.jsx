@@ -1,6 +1,6 @@
 import React from 'react';
 import style from './Login.module.scss'
-import LoginReduxForm from './LoginForm';
+import LoginForm from './LoginForm';
 import TestAccountData from '../TestAccountData';
 
 const Login = (props) => {
@@ -11,7 +11,7 @@ const Login = (props) => {
       <div className={style.Login}>
          <TestAccountData />
          <h3>Авторизация</h3>
-         <LoginReduxForm onSubmit={submitLogin} isAuth={props.isAuth}/>
+         <LoginForm onSubmit={submitLogin} isAuth={props.isAuth}/>
       </div>
    );
 }

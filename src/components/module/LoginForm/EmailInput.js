@@ -8,10 +8,10 @@ const EmailInput = ({input, meta, ...props}) => {
    <div className={error || dirty ? style.emailError : style.email}>
       <input {...input} {...props}/>
       {error &&
-         <p className={style.messageError}>{meta.error}</p>
+         <p className={style.messageError}>Некорректный email</p>
       }
       {dirty &&
-         <p className={style.messageError}>Поле не должно быть пустым</p>
+         <p className={style.messageError}>Поле email не должно быть пустым</p>
       }
    </div>
    )

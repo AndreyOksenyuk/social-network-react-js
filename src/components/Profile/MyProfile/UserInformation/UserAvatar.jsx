@@ -2,7 +2,7 @@ import React from 'react';
 import img from '../../../../assets/Image/ava.jpg'
 import AddAvatarSVG from '../../../module/SVG/AddAvatar';
 
-const UserAvatar = (props) => {
+const UserAvatar = React.memo (props => {
    
    let onMyPhoto = (e) => {
       props.saveMyPhotoTC(e.target.files[0])
@@ -20,6 +20,6 @@ const UserAvatar = (props) => {
 
       </div>
    );
-}
+})
 
 export default UserAvatar;

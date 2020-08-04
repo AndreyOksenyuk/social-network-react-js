@@ -3,13 +3,20 @@ import MyProfile from './MyProfile';
 import { connect } from 'react-redux';
 import { compose } from 'redux';
 import { withRouter } from 'react-router-dom';
-import { getUserProfileThankCreator, getUserStatus, changeValueMyStatus, saveMyPhotoTC } from '../../../Redux/profile-reducer';
+import { 
+   getUserProfileThankCreator, 
+   getUserStatus, 
+   changeValueMyStatus, 
+   saveMyPhotoTC,
+   saveMyDataTC,
+   setIsPutData, 
+} from '../../../Redux/profile-reducer';
 import { authMeThankCreator } from '../../../Redux/auth-reducer';
 import Preloader from '../../module/preloader'
 import { getAuthMe } from '../../../api';
 import {withAuthRedirect} from '../../../hoc/withAuthRedirect';
 
-class MyProfileContainer extends React.Component {    
+class MyProfileContainer extends React.PureComponent {    
       state = {
          preloader: true,
       }
@@ -22,6 +29,7 @@ class MyProfileContainer extends React.Component {
          }
       })
    }
+
 
    render() {     
       if (this.state.preloader) {
@@ -37,6 +45,7 @@ let mapStateToProps = (state) => {
       myStatus: state.profilePage.userStatus,
       email: state.auth.email,
       fulfilled: state.auth.fulfilled,
+      isPutData: state.profilePage.isPutData
    }
 }
 
@@ -46,6 +55,7 @@ export default compose(
    withAuthRedirect,
    connect(mapStateToProps, {
       getMyProfile: getUserProfileThankCreator,
-      authMeThankCreator, getUserStatus, changeValueMyStatus, saveMyPhotoTC
+      authMeThankCreator, getUserStatus, changeValueMyStatus, saveMyPhotoTC,
+      saveMyDataTC, setIsPutData,
    }),
 )(MyProfileContainer)

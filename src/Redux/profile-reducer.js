@@ -9,6 +9,8 @@ const SET_FOLLOWED_USER = 'SET-FOLLOWED-USER'
 const GET_USER_STATUS = 'GET_USER_STATUS'
 const CHANGE_MY_STATUS = 'CHANGE_MY_STATUS'
 const SET_MY_PHOTOS = 'SET_MY_PHOTOS'
+const FOLLOWED_TOGLE = 'FOLLOWED_TOGLE'
+const SET_IS_PUT_DATA = 'SET_IS_PUT_DATA'
 
 let initialState = {
    User: {},
@@ -16,6 +18,7 @@ let initialState = {
    followedUser: null,
    newPostText: '',
    text: 0,
+   isPutData: null,
       posts: [{
             id: 1,
             user: 'Andery',
@@ -168,7 +171,7 @@ let  PROFILE_REDUCER = (state = initialState, action) => {
             ...state,
             followedUser: action.follow
          }
-      case 'FOLLOWED_TOGLE':
+      case FOLLOWED_TOGLE:
          return {
             ...state,
             followedUser: state.followedUser = !state.followedUser
@@ -188,6 +191,11 @@ let  PROFILE_REDUCER = (state = initialState, action) => {
             ...state,
             User: {...state.User, photos: {...action.photos}}
          }
+      case SET_IS_PUT_DATA:
+         return{
+            ...state,
+            isPutData: action.boolean,
+         }
       default:
          return state;
    }
@@ -202,35 +210,39 @@ export let actionCreatorChangePost = (text) => ({
    text: text,
 })
 export let actionCreatorLike = (index) => ({
-   type: 'LIKE',
+   type: LIKE,
    index: index,
 })
 export let actionCreatorDisLike = (index) => ({
-   type: 'DIS-LIKE',
+   type: DIS_LIKE,
    index: index,
 })
 export let setUserProfile = (user) => ({
-   type: 'USER_PROFILE',
+   type: USER_PROFILE,
    user: user,
 })
 export let setFollowedUser = (follow) => ({
-   type: 'SET-FOLLOWED-USER',
+   type: SET_FOLLOWED_USER,
    follow,
 })
 export let FollowToggle = () => ({
-   type: 'FOLLOWED_TOGLE',
+   type: FOLLOWED_TOGLE,
 })
 export let UserStatus = (status) => ({
-   type: 'GET_USER_STATUS',
+   type: GET_USER_STATUS,
    status
 })
 export let changeValueMyStatus = (status) => ({
-   type: 'CHANGE_MY_STATUS',
+   type: CHANGE_MY_STATUS,
    status,
 })
 let setMyPhotos = (photos) => ({
-   type: 'SET_MY_PHOTOS',
+   type: SET_MY_PHOTOS,
    photos,
+})
+export let setIsPutData = (boolean) => ({
+   type: SET_IS_PUT_DATA,
+   boolean
 })
 
 export const getUserProfileThankCreator= (userId) => (dispatch) => {
@@ -252,5 +264,16 @@ export const saveMyPhotoTC= (photo) => (dispatch) => {
          }
       })
    }
+
+export const saveMyDataTC = (data, userId) => (dispatch) => {
+   userAPI.putMyData(data).then(response => {
+      if (response.data.resultCode === 0) {
+         userAPI.getUserProfile(userId).then(data => {
+            dispatch(setUserProfile(data))
+              dispatch(setIsPutData(true)) 
+         }); 
+      }
+   })
+}
 
 export default PROFILE_REDUCER;

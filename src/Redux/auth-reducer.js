@@ -1,4 +1,4 @@
-import { getAuthMe, postLogin, deleteLogin } from '../api'
+import { getAuthMe, postLogin, deleteLogin} from '../api'
 import { stopSubmit } from 'redux-form'
 const SET_AUTH_DATA = 'SET_AUTH_DATA'
 const LOGIN_SET_ME_ID = 'LOGIN_SET_ME_ID'
@@ -54,6 +54,7 @@ let logout = (id, messages, isAuth) => ({
    type: LOGOUT,
    id, messages, isAuth
 })
+
 
 export const authMeThankCreator = () => {
    return (dispatch) => {

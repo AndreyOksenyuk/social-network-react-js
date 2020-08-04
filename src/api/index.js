@@ -38,18 +38,21 @@ export let userAPI = {
          return response.data
    })},
    getUserStatus (userId) {
-      return instance.get(`/profile/status/${userId}`).then(response => {
+      return instance.get(`profile/status/${userId}`).then(response => {
          return response.data
    })},
    putMyStatus (status) {
-      return instance.put(`/profile/status`, status)
+      return instance.put(`profile/status`, status)
    },
    putMyPhoto(photo) {
       const formData = new FormData()
       formData.append("image", photo)
-      return instance.put(`/profile/photo`, formData, {}).then(response => {
+      return instance.put(`profile/photo`, formData, {}).then(response => {
          return response.data
       })
+   },
+   putMyData(data) {
+      return instance.put(`profile`, data)
    },
 }
 
@@ -60,10 +63,10 @@ export let getAuthMe = () => {
 }
 
 export let postLogin = (email, password, rememberMe) => {
-   return instance.post(`/auth/login`, {email, password, rememberMe}) 
+   return instance.post(`auth/login`, {email, password, rememberMe}) 
 }
 export let deleteLogin = () => {
-   return instance.delete(`/auth/login`) 
+   return instance.delete(`auth/login`) 
 }
 
 //API News

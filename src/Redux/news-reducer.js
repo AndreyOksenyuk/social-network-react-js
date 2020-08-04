@@ -1,4 +1,6 @@
 import { newsAPI } from '../api'
+import { newsState } from '../NewsState'
+
 
 const NEWS_COUNTRY_TOP_HEADLINES = 'NEWS_COUNTRY_TOP_HEADLINES'
 
@@ -24,13 +26,11 @@ let setNewsCountryHeadlines = (news) => ({
 })
 
 export let NewsCountryHeadlinesTC = (news) => (dispatch) =>{
-	
 	newsAPI.getNewsSearch(news).then(response => {
-		if(response.status){
+		if (response.status === 200 ){
 			dispatch(setNewsCountryHeadlines(response.data.articles))
 		}
-	})
+	}).catch(dispatch(setNewsCountryHeadlines(newsState.articles)))
 }
-
 
 export default NEWS_REDUCER;

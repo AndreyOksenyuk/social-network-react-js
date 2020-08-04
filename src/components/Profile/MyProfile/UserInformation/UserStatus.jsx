@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import '../MyProfile.scss'
 import { userAPI } from '../../../../api';
 
-const UserStatus = (props) => {
+const UserStatus = React.memo (props => {
    let input = React.createRef()
    let [edidMode, setEdidMode] = useState(true)
    let setMyStatus = () => {
@@ -38,6 +38,6 @@ const UserStatus = (props) => {
 
       </>
    );
-}
+})
 
 export default UserStatus;

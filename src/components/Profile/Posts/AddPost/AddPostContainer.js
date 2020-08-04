@@ -1,10 +1,11 @@
 import {actionCreatorAddPost, actionCreatorChangePost} from '../../../../Redux/profile-reducer'
 import AddPost from './AddPost';
 import { connect } from 'react-redux';
+import { reset } from 'redux-form'
 
 let mapStateToProps = (state) => {
    return {
-      value: state.profilePage.newPostText,
+      
    }
 }
 
@@ -12,6 +13,8 @@ let mapDispatchToProps = (dispatch) => {
    return {
       addPost: (post) => {
          dispatch(actionCreatorAddPost(post))
+         dispatch(reset('addPostProfile'))
+         
       },
       changePost: (post) => {
          dispatch(actionCreatorChangePost(post))

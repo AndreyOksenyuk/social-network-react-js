@@ -6,7 +6,7 @@ import MapPostContainer from '../Posts/MapPosts/MapPostContainer';
 import UserInfo from './UserInformation/UserInfo';
 import UserAvatar from './UserInformation/UserAvatar';
 
-const MyProfile = (props) => {
+const MyProfile = React.memo(props => {
 
    return (
       <div className="MyProfile">
@@ -17,10 +17,12 @@ const MyProfile = (props) => {
             />
             <UserInfo                      
                myStatus={props.myStatus}
-               setMyStatus={props.setMyStatus}
                changeValueMyStatus={props.changeValueMyStatus}
-               fullName={props.user.fullName}
+               user={props.user}
                email={props.email}
+               saveMyDataTC={props.saveMyDataTC}
+               setIsPutData={props.setIsPutData}
+               isPutData={props.isPutData}
             />
          </div>
 
@@ -30,6 +32,6 @@ const MyProfile = (props) => {
          </div>
       </div>
    );
-}
+});
 
 export default MyProfile;

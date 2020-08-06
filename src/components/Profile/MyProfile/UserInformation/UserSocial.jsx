@@ -4,7 +4,7 @@ const UserSocial = ({ keyContacts, valueContacts }) => {
    return (
          <p>{keyContacts + ": "}
             {valueContacts
-               ? <a href={valueContacts}>valueContacts</a>
+               ? <a href={valueContacts}>{valueContacts}</a>
                : <i>нет данных</i>}
          </p>
    );

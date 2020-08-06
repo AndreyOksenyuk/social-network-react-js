@@ -3,9 +3,6 @@
    height: 100%;
    padding: 20px;
    overflow: auto;
-   &__user {
-      height: 600px;
-   }
 
    &__posts {
       overflow: auto;
@@ -15,6 +12,7 @@
 
 .MyProfile__user {
    display: flex;
+   min-height: 400px;
 }
 
 .UserInform {
@@ -45,34 +43,50 @@
    }
 }
 
-.UserInform_wrapper{
+.UserInform_wrapper {
    position: relative;
    width: 400px;
-   .fa-pencil{
+
+   form {
+      position: relative;
+   }
+
+   .openFormBtn {
       position: absolute;
       right: -50px;
+      color: rgb(63, 99, 216);
+      user-select: none;
       cursor: pointer;
    }
+}
+
+.formErrorProfile {
+   position: absolute;
+   top: -40px;
+   width: 100%;
+   font-size: 18px;
+   font-weight: 600;
+   color: red;
+}
+.formSuccesProfile {
+   @extend .formErrorProfile;
+   color: green;
 }
 
 .UserInform__data {
    margin-top: 20px;
    font-size: 16px;
    font-weight: 500;
+   margin-bottom: 20px;
 
    &-inner {
       display: flex;
       margin-bottom: 10px;
-      input{
+
+      input {
          border: none;
          border-bottom: 1px solid #ccc;
          outline: none;
-      }
-      textarea{
-         width: 300px;
-         height: 100px;
-         padding: 10px;
-         font-size: 17px;
       }
 
       b {
@@ -89,6 +103,36 @@
       a {
          text-decoration: none;
          color: #000;
+      }
+   }
+}
+
+.UserInform-textArea {
+   display: flex;
+   flex-direction: column;
+
+   textarea {
+      max-width: 300px;
+      height: 100px;
+      padding: 10px;
+      font-size: 17px;
+      margin-top: 10px;
+   }
+}
+
+.UserInform__data-contacts {
+   display: flex;
+   flex-direction: column;
+
+   .SocialLink {
+      display: flex;
+      margin: 15px 0 0 20px;
+
+      input {
+         border: none;
+         border-bottom: 1px solid #ccc;
+         outline: none;
+         margin-left: 10px;
       }
    }
 }
@@ -146,6 +190,14 @@
    }
 }
 
-.UpdateDataSucces{
-   color: green;
+
+.SaveMyDataBtn {
+   width: 100px;
+   padding: 5px;
+   background-color: rgb(134, 255, 134);
+   margin: 0 auto;
+   cursor: pointer;
+   &:disabled{
+      cursor: progress;
+   }
 }

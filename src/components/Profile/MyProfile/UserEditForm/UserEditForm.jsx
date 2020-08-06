@@ -6,9 +6,11 @@ const UserEditForm = (props) => {
 
    return (
       <form onSubmit={props.handleSubmit}>
+         {props.error && <div className="formErrorProfile"><p>{props.error}</p></div>}
+         {props.isPutData && <p className='formSuccesProfile'>Данные успешно обновлены</p>}
          <div className="UserInform__data">
             <div className="UserInform__data-inner">
-               <b>fullName: </b>
+               <b>Имя: </b>
                <Field
                   name='fullName'
                   type='text'
@@ -16,39 +18,101 @@ const UserEditForm = (props) => {
                />
             </div>
             <div className="UserInform__data-inner">
-               <b>lookingForAJob: </b>
+               <b>Ищу работу: </b>
                <Field
                   name='lookingForAJob'
                   type='checkbox'
                   component='input'
                />
             </div>
-            <div className="UserInform__data-inner">
-               <b>lookingForAJobDescription: </b>
+            <div className="UserInform__data-inner UserInform-textArea">
+               <b>Умения: </b>
                <Field
                   name='lookingForAJobDescription'
                   component='textarea'
                />
             </div>
-            <div className="UserInform__data-inner">
-               <b>AboutMe: </b>
+            <div className="UserInform__data-inner UserInform-textArea">
+               <b>Обо мне: </b>
                <Field
                   name='aboutMe'
                   type='text'
                   component='textarea'
                />
             </div>
+            <div className="UserInform__data-contacts">
+               <b>Контакты: </b>
+               <div className="SocialLink">
+                  <p>facebook</p>
+                  <Field
+                     name='contacts.facebook'
+                     type='text'
+                     component='input'
+                  />
+               </div>
+               <div className="SocialLink">
+                  <p>github</p>
+                  <Field
+                     name='contacts.github'
+                     type='text'
+                     component='input'
+                  />
+               </div>
+               <div className="SocialLink">
+                  <p>instagram</p>
+                  <Field
+                     name='contacts.instagram'
+                     type='text'
+                     component='input'
+                  />
+               </div>
+               <div className="SocialLink">
+                  <p>mainLink</p>
+                  <Field
+                     name='contacts.mainLink'
+                     type='text'
+                     component='input'
+                  /></div>
+               <div className="SocialLink">
+                  <p>twitter</p>
+                  <Field
+                     name='contacts.twitter'
+                     type='text'
+                     component='input'
+                  /></div>
+               <div className="SocialLink">
+                  <p>vk</p>
+                  <Field
+                     name='contacts.vk'
+                     type='text'
+                     component='input'
+                  /></div>
+               <div className="SocialLink">
+                  <p>website</p>
+                  <Field
+                     name='contacts.website'
+                     type='text'
+                     component='input'
+                  /></div>
+               <div className="SocialLink">
+                  <p>youtube</p>
+                  <Field
+                     name='contacts.youtube'
+                     type='text'
+                     component='input'
+                  /></div>
+
+            </div>
          </div>
-         <button>{props.disbleBtn ? <i className="fa fa-spinner fa-pulse"></i> : 'Submit'}</button>
-         {
-            props.isPutData && <p className='UpdateDataSucces'>Данные успешно обновлены</p>
-         }
+         <button disabled={props.disableBtn} className="SaveMyDataBtn">
+            {props.disableBtn ? <i className="fa fa-spinner fa-pulse"></i> : 'Сохранить'}
+         </button>
       </form>
    );
 }
 
 const UserEditReduxForm = reduxForm({
-   form: 'UserEditForm',  
+   form: 'UserEditForm',
 })(UserEditForm)
 
 

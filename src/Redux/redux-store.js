@@ -1,4 +1,5 @@
 import { combineReducers, createStore, applyMiddleware } from 'redux'
+import App from './App-reducer'
 import profilePage from './profile-reducer'
 import messagePage from './message-reducer'
 import newsPage from './news-reducer'
@@ -9,6 +10,7 @@ import thunkMiddleware from 'redux-thunk'
 import { reducer as formReducer } from 'redux-form'
 
 let reducers = combineReducers({
+   App,
    profilePage,
    messagePage,
    settingPage,   

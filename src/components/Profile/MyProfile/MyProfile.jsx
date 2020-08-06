@@ -11,18 +11,18 @@ const MyProfile = React.memo(props => {
    return (
       <div className="MyProfile">
          <div className="MyProfile__user">
-            <UserAvatar 
+            <UserAvatar
                photoLarge={{ ...props.user.photos }.large}
                saveMyPhotoTC={props.saveMyPhotoTC}
             />
-            <UserInfo                      
+            <UserInfo
                myStatus={props.myStatus}
                changeValueMyStatus={props.changeValueMyStatus}
                user={props.user}
                email={props.email}
                saveMyDataTC={props.saveMyDataTC}
-               setIsPutData={props.setIsPutData}
                isPutData={props.isPutData}
+               disableBtn={props.disableBtn}
             />
          </div>
 

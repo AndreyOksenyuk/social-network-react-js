@@ -2,12 +2,12 @@ import axios from 'axios';
 
 let instance = axios.create({
    withCredentials: true,
-   baseURL: 'https://social-network.samuraijs.com/api/1.0/',
-      headers: {
-         'API-KEY': '994c0563-a343-4b38-a674-54b0f1bd315c'
-      }
-})
 
+   baseURL: 'https://social-network.samuraijs.com/api/1.0/',
+   headers: {
+      'API-KEY': '994c0563-a343-4b38-a674-54b0f1bd315c',  
+   }
+})
 export let followedAPI = {
    getFollow(userId) {
       return instance.get(`follow/${userId}`).then(response => {
@@ -29,19 +29,22 @@ export let followedAPI = {
 };
 
 export let userAPI = {
-   getUserProfile (userId) {
+   getUserProfile(userId) {
       return instance.get(`profile/${userId}`).then(response => {
          return response.data
-   })},
-   getUsers (numberOfPages, numberOfUsers) {
+      })
+   },
+   getUsers(numberOfPages, numberOfUsers) {
       return instance.get(`users?page=${numberOfPages}&count=${numberOfUsers}`).then(response => {
          return response.data
-   })},
-   getUserStatus (userId) {
+      })
+   },
+   getUserStatus(userId) {
       return instance.get(`profile/status/${userId}`).then(response => {
          return response.data
-   })},
-   putMyStatus (status) {
+      })
+   },
+   putMyStatus(status) {
       return instance.put(`profile/status`, status)
    },
    putMyPhoto(photo) {
@@ -56,29 +59,35 @@ export let userAPI = {
    },
 }
 
-export let getAuthMe = () => {
-   return instance.get(`auth/me`).then(response => {
-      return response.data 
-   });
+export const authAPI = {
+   getAuthMe() {
+      return instance.get(`auth/me`).then(response => {
+         return response.data
+      });
+   },
+
+   postLogin(email, password, rememberMe, captcha) {
+      return instance.post(`auth/login`, { email, password, rememberMe, captcha })
+   },
+   deleteLogin() {
+      return instance.delete(`auth/login`)
+   },
+   getCaptchaURL() {
+      return instance.get(`security/get-captcha-url`)
+   },
 }
 
-export let postLogin = (email, password, rememberMe) => {
-   return instance.post(`auth/login`, {email, password, rememberMe}) 
-}
-export let deleteLogin = () => {
-   return instance.delete(`auth/login`) 
-}
 
 //API News
 const newskey = 'deca95af7ec24bd7881b9d59143b9780';
-let instanceNews = axios.create({ 
+let instanceNews = axios.create({
    baseURL: 'https://newsapi.org/v2/'
 })
 
 export let newsAPI = {
 
-   getNewsSearch(country = 'ua'){
-      return  instanceNews.get(`top-headlines?country=${country}&apiKey=${newskey}`)
+   getNewsSearch(country = 'ua') {
+      return instanceNews.get(`top-headlines?country=${country}&apiKey=${newskey}`)
    },
 }
 

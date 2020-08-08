@@ -1,16 +1,13 @@
 import React, { useEffect } from 'react';
 import { compose } from 'redux';
 import { connect } from 'react-redux';
-import { setErrorAC } from '../../Redux/App-reducer';
+import { setErroTC } from '../../Redux/App-reducer';
 import SocialNetworkApp from './index';
 
 const SocialNetworkAppContainer = (props) => {
 
    let catchAllUnhandledError = (e) => {
-      props.setErrorAC(e.reason.toJSON().name, e.reason.toJSON().message)
-      setTimeout(() => {
-         props.setErrorAC(null, null)
-      }, 4000);
+      props.setErroTC(e.reason.toJSON().name, e.reason.toJSON().message)
    }
 
    useEffect(() => {
@@ -31,7 +28,7 @@ let mapStateToProps = (state) => ({
 export default compose(
 
    connect(mapStateToProps, {
-      setErrorAC,
+      setErroTC,
    })
 )(SocialNetworkAppContainer)
 

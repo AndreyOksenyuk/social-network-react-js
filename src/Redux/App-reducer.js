@@ -17,10 +17,17 @@ const APP_REDUCER = (state = initialState, action) => {
    }
 }
 
-export const setErrorAC = (error, text) => ({
+const setErrorAC = (error, text) => ({
    type: SET_ERROR,
    error, text
 })
+
+export const setErroTC = (error, text) => async (dispatch) => {
+   await  dispatch(setErrorAC(error, text))
+   setTimeout(() => {
+      dispatch(setErrorAC(null, null))
+   }, 4000);
+}
 
 
 

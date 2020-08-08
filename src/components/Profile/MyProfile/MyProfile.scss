@@ -13,6 +13,7 @@
 .MyProfile__user {
    display: flex;
    min-height: 400px;
+   margin-bottom: 100px;
 }
 
 .UserInform {
@@ -61,17 +62,43 @@
 }
 
 .formErrorProfile {
-   position: absolute;
-   top: -40px;
    width: 100%;
    font-size: 18px;
    font-weight: 600;
+   padding: 5px;
+   margin: 20px;
+   border-radius: 5px;
+   animation: showError 1s linear forwards;
+   text-align: center;
+   background-color: rgba(255, 0, 0, 0.1);
    color: red;
 }
+
 .formSuccesProfile {
    @extend .formErrorProfile;
    color: green;
+   background-color: rgba(0, 255, 0, 0.1);
 }
+
+@keyframes showError {
+   0% {
+      opacity: 0;
+   }
+
+   25% {
+      opacity: 1;
+   }
+
+   50% {
+      opacity: 0;
+   }
+
+   100% {
+      opacity: 1;
+   }
+}
+
+
 
 .UserInform__data {
    margin-top: 20px;
@@ -185,19 +212,8 @@
 
       i {
          font-size: 14px;
-         font-weight: 200;
+         font-weight: 400;
+         color: rgb(141, 141, 141);
       }
-   }
-}
-
-
-.SaveMyDataBtn {
-   width: 100px;
-   padding: 5px;
-   background-color: rgb(134, 255, 134);
-   margin: 0 auto;
-   cursor: pointer;
-   &:disabled{
-      cursor: progress;
    }
 }

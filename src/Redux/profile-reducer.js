@@ -13,6 +13,7 @@ const SET_MY_PHOTOS = 'SET_MY_PHOTOS'
 const FOLLOWED_TOGLE = 'FOLLOWED_TOGLE'
 const SET_IS_PUT_DATA = 'SET_IS_PUT_DATA'
 const SET_DISABLE_BTN = 'SET_DISABLE_BTN'
+const SET_USERID_PROFILE = 'profile-user-id/SET_USERID_PROFILE'
 
 let initialState = {
    User: {},
@@ -22,6 +23,7 @@ let initialState = {
    text: 0,
    isPutData: null,
    disableBtn: null,
+   userId: null,
    posts: [{
       id: 1,
       user: 'Andery',
@@ -204,6 +206,11 @@ let PROFILE_REDUCER = (state = initialState, action) => {
             ...state,
             disableBtn: action.boolean,
          }
+      case SET_USERID_PROFILE:
+         return {
+            ...state,
+            userId: action.id,
+         }
       default:
          return state;
    }
@@ -256,9 +263,15 @@ let setDisableBtn = (boolean) => ({
    type: SET_DISABLE_BTN,
    boolean
 })
+export const setUserIdProfile = (id) => ({
+   type: SET_USERID_PROFILE,
+   id
+})
 
-export const getUserProfileThankCreator = (userId) => (dispatch) => {
-   userAPI.getUserProfile(userId).then(data => dispatch(setUserProfile(data)));
+export const getUserProfileThankCreator = (userId) => async (dispatch) => {
+   await dispatch(setIsPutData(true))
+   await userAPI.getUserProfile(userId).then(data => dispatch(setUserProfile(data)));
+   dispatch(setIsPutData(false))
 }
 
 export const getFollowThankCreator = (userId) => (dispatch) => {

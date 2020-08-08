@@ -5,11 +5,13 @@ const LOGIN_SET_ME_ID = 'LOGIN_SET_ME_ID'
 const LOGOUT = 'LOGOUT'
 const SET_CAPTCHA_URL = 'SET_CAPTCHA_URL'
 const DISABLE_SUBMIT_BUTTON = 'DISABLE_SUBMIT_BUTTON'
+const SET_MY_AVATAR = 'auth-setMyAvatar/SET_MY_AVATAR'
 
 let initialState = {
    id: null,
    login: null,
    email: null,
+   myAvatar: null,
    messages: null,
    isAuth: false,
    captchaURL: null,
@@ -50,6 +52,11 @@ let AUTH_REDUCER = function (state = initialState, action) {
             ...state,
             disableSubmitBtn: action.boolean,
          }
+      case SET_MY_AVATAR:
+         return{
+            ...state,
+            myAvatar: action.avatar,
+         }
       default:
          break;
    }
@@ -75,6 +82,10 @@ export const setCaptchaUrl = (url) => ({
 const setDisableSubmitBtn = (boolean) => ({
    type: DISABLE_SUBMIT_BUTTON,
    boolean,
+})
+export const setMyAvatar = (avatar) => ({
+   type: SET_MY_AVATAR,
+   avatar,
 })
 
 

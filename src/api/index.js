@@ -91,5 +91,24 @@ export let newsAPI = {
    },
 }
 
+//API Music
+let instanceMusic = axios.create({
+   baseURL: 'https://deezerdevs-deezer.p.rapidapi.com/',
+   headers:{
+      "x-rapidapi-host": "deezerdevs-deezer.p.rapidapi.com",
+      "x-rapidapi-key": "a5e8ff1539msh6a02f3c50df5af6p1e57fdjsn96e65aaed7e6",
+      "useQueryString": true
+   }
+})
+
+
+export let musicAPI = {
+   
+   getSearchMusic(query, limit=8, index=0, ){
+      return instanceMusic.get(`search?q=${query}&index=${index}&limit=${limit}`)
+   },
+
+}
+
 
 

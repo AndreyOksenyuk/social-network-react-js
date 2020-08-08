@@ -19,7 +19,7 @@ const UserInfo = React.memo(props => {
    return (
       <div className='UserInform_wrapper'>
          {openForm
-            ? <i className='openFormBtn' onClick={onToggleForm}>назад</i>
+            ? <i className='openFormBtn' onClick={onToggleForm}>&lArr; назад</i>
             : <i className="fa fa-pencil openFormBtn" aria-hidden="true"
                title="Изменить данные"
                onClick={onToggleForm}> &nbsp;Изменить

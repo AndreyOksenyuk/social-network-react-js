@@ -30,7 +30,8 @@ class MyProfileContainer extends React.PureComponent {
    }
 
 
-   render() {
+   render() {     
+
       if (this.state.preloader) {
          return <Preloader />
       }

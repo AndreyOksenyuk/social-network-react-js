@@ -6,8 +6,6 @@ const UserEditForm = (props) => {
 
    return (
       <form onSubmit={props.handleSubmit}>
-         {props.error && <div className="formErrorProfile"><p>{props.error}</p></div>}
-         {props.isPutData && <p className='formSuccesProfile'>Данные успешно обновлены</p>}
          <div className="UserInform__data">
             <div className="UserInform__data-inner">
                <b>Имя: </b>
@@ -104,9 +102,11 @@ const UserEditForm = (props) => {
 
             </div>
          </div>
-         <button disabled={props.disableBtn} className="SaveMyDataBtn">
-            {props.disableBtn ? <i className="fa fa-spinner fa-pulse"></i> : 'Сохранить'}
-         </button>
+         <button disabled={props.disableBtn} className="Button">
+               {props.disableBtn ? <i className="fa fa-spinner fa-pulse"></i> : 'Сохранить'}
+            </button>
+         {props.error && <div className="formErrorProfile"><p>{props.error}</p></div>}
+         {props.isPutData && <p className='formSuccesProfile'>Данные успешно обновлены</p>}
       </form>
    );
 }

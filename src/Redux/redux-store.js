@@ -5,6 +5,7 @@ import messagePage from './message-reducer'
 import newsPage from './news-reducer'
 import usersPage from './users-reducer'
 import auth from './auth-reducer'
+import musicPage from './music-reducer'
 import settingPage from './settings-reducer'
 import thunkMiddleware from 'redux-thunk'
 import { reducer as formReducer } from 'redux-form'
@@ -16,6 +17,7 @@ let reducers = combineReducers({
    settingPage,   
    usersPage,
    newsPage,
+   musicPage,
    auth,
    form: formReducer
 });

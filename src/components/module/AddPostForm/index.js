@@ -1,14 +1,15 @@
 import React from 'react';
 import style from './AddMessageForm.module.scss'
+import 'antd/dist/antd.css';
+import { Input } from 'antd';
+
+const { TextArea } = Input;
 
 const TextareaPost = ({input, meta, ...props}) => {
    return (
       <div className={style.form}>
-         <textarea {...input} {...props} className={meta.valid ? style.textarea : style.noValid}/>
-         {
-            !meta.valid &&
-             <p>{meta.error}</p>
-         }
+         <p className={style.textError} style={meta.valid ? { opacity: '0' } : { opacity: '1' }}>Добавить запись &#9998;</p>        
+         <TextArea {...input} {...props} />
       </div>
    );
 }

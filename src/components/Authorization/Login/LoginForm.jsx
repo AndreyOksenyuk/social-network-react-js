@@ -55,7 +55,7 @@ const LoginForm = (props) => {
                name='rememberMe'
                component='input'
             />
-            <label className="checkBox" htmlFor="rememberMe">запомнить меня</label>
+            <label className="checkBox" htmlFor="rememberMe">Запомнить меня</label>
             {
                props.captchaURL && <div className="Captca_wrapper">
                   <img src={props.captchaURL} alt="captcha" onClick={props.onChangeCaptcha} />

@@ -1,4 +1,4 @@
-import { musicAPI } from "../api"
+import { musicAPI } from "../api/apiMusic"
 
 const SET_MUSIC = 'music-reducer/SET_MUSIC'
 const SET_VALUE_SEARCH = 'music-reducer/SET_VALUE_SEARCH'

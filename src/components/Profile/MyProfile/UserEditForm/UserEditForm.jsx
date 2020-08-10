@@ -1,6 +1,11 @@
 import React from 'react';
 import { Field, reduxForm } from 'redux-form';
 import '../MyProfile.scss'
+import MyNameForm from '../../../module/MyProfileEditForm/MyNameForm';
+import LookingForAjobChecbox from '../../../module/MyProfileEditForm/LookingForAjobChecbox';
+import MyScillsFormTextarea from '../../../module/MyProfileEditForm/MyScillsFormTextarea';
+import AboutMyFormTextarea from '../../../module/MyProfileEditForm/AboutMyFormTextarea';
+import MySocialLinkFormInput from '../../../module/MyProfileEditForm/MySocialLinkFormInput';
 
 const UserEditForm = (props) => {
 
@@ -12,7 +17,7 @@ const UserEditForm = (props) => {
                <Field
                   name='fullName'
                   type='text'
-                  component='input'
+                  component={MyNameForm}
                />
             </div>
             <div className="UserInform__data-inner">
@@ -20,14 +25,14 @@ const UserEditForm = (props) => {
                <Field
                   name='lookingForAJob'
                   type='checkbox'
-                  component='input'
+                  component={LookingForAjobChecbox}
                />
             </div>
             <div className="UserInform__data-inner UserInform-textArea">
                <b>Умения: </b>
                <Field
                   name='lookingForAJobDescription'
-                  component='textarea'
+                  component={MyScillsFormTextarea}
                />
             </div>
             <div className="UserInform__data-inner UserInform-textArea">
@@ -35,7 +40,7 @@ const UserEditForm = (props) => {
                <Field
                   name='aboutMe'
                   type='text'
-                  component='textarea'
+                  component={AboutMyFormTextarea}
                />
             </div>
             <div className="UserInform__data-contacts">
@@ -45,7 +50,7 @@ const UserEditForm = (props) => {
                   <Field
                      name='contacts.facebook'
                      type='text'
-                     component='input'
+                     component={MySocialLinkFormInput}
                   />
                </div>
                <div className="SocialLink">
@@ -53,7 +58,7 @@ const UserEditForm = (props) => {
                   <Field
                      name='contacts.github'
                      type='text'
-                     component='input'
+                     component={MySocialLinkFormInput}
                   />
                </div>
                <div className="SocialLink">
@@ -61,7 +66,7 @@ const UserEditForm = (props) => {
                   <Field
                      name='contacts.instagram'
                      type='text'
-                     component='input'
+                     component={MySocialLinkFormInput}
                   />
                </div>
                <div className="SocialLink">
@@ -69,35 +74,35 @@ const UserEditForm = (props) => {
                   <Field
                      name='contacts.mainLink'
                      type='text'
-                     component='input'
+                     component={MySocialLinkFormInput}
                   /></div>
                <div className="SocialLink">
                   <p>twitter</p>
                   <Field
                      name='contacts.twitter'
                      type='text'
-                     component='input'
+                     component={MySocialLinkFormInput}
                   /></div>
                <div className="SocialLink">
                   <p>vk</p>
                   <Field
                      name='contacts.vk'
                      type='text'
-                     component='input'
+                     component={MySocialLinkFormInput}
                   /></div>
                <div className="SocialLink">
                   <p>website</p>
                   <Field
                      name='contacts.website'
                      type='text'
-                     component='input'
+                     component={MySocialLinkFormInput}
                   /></div>
                <div className="SocialLink">
                   <p>youtube</p>
                   <Field
                      name='contacts.youtube'
                      type='text'
-                     component='input'
+                     component={MySocialLinkFormInput}
                   /></div>
 
             </div>

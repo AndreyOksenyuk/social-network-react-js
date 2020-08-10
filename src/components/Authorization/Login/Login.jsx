@@ -5,6 +5,7 @@ import TestAccountData from '../TestAccountData';
 
 const Login = (props) => {
    let submitLogin = (value) => {
+      console.log(value);
       props.loginThankCreator(value.email, value.password, value.rememberMe, value.captcha)
    }
 

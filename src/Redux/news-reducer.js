@@ -1,4 +1,4 @@
-import { newsAPI } from '../api'
+import { newsAPI } from '../api/apiNews'
 import { newsState } from '../NewsState'
 
 

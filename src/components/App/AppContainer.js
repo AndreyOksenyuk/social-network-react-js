@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import { compose } from 'redux';
 import { connect } from 'react-redux';
 import { setErroTC } from '../../Redux/App-reducer';
+import { logoutThankCreator} from '../../Redux/auth-reducer'
 import SocialNetworkApp from './index';
 
 const SocialNetworkAppContainer = (props) => {
@@ -28,7 +29,8 @@ let mapStateToProps = (state) => ({
 export default compose(
 
    connect(mapStateToProps, {
-      setErroTC,
+      setErroTC, 
+      logout: logoutThankCreator,
    })
 )(SocialNetworkAppContainer)
 

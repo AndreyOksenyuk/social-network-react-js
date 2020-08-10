@@ -3,11 +3,9 @@ import AddPost from './AddPost';
 import { connect } from 'react-redux';
 import { reset } from 'redux-form'
 
-let mapStateToProps = (state) => {
-   return {
-      
-   }
-}
+let mapStateToProps = (state) => ({
+   postsLength: state.profilePage.posts.length
+})
 
 let mapDispatchToProps = (dispatch) => {
    return {

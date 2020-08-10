@@ -1,11 +1,12 @@
 import axios from 'axios';
+import { networkKey } from '../keyAPI';
 
 let instance = axios.create({
    withCredentials: true,
 
    baseURL: 'https://social-network.samuraijs.com/api/1.0/',
    headers: {
-      'API-KEY': '994c0563-a343-4b38-a674-54b0f1bd315c',  
+      'API-KEY': networkKey,  
    }
 })
 export let followedAPI = {
@@ -77,38 +78,6 @@ export const authAPI = {
    },
 }
 
-
-//API News
-const newskey = 'deca95af7ec24bd7881b9d59143b9780';
-let instanceNews = axios.create({
-   baseURL: 'https://newsapi.org/v2/'
-})
-
-export let newsAPI = {
-
-   getNewsSearch(country = 'ua') {
-      return instanceNews.get(`top-headlines?country=${country}&apiKey=${newskey}`)
-   },
-}
-
-//API Music
-let instanceMusic = axios.create({
-   baseURL: 'https://deezerdevs-deezer.p.rapidapi.com/',
-   headers:{
-      "x-rapidapi-host": "deezerdevs-deezer.p.rapidapi.com",
-      "x-rapidapi-key": "a5e8ff1539msh6a02f3c50df5af6p1e57fdjsn96e65aaed7e6",
-      "useQueryString": true
-   }
-})
-
-
-export let musicAPI = {
-   
-   getSearchMusic(query, limit=8, index=0, ){
-      return instanceMusic.get(`search?q=${query}&index=${index}&limit=${limit}`)
-   },
-
-}
 
 
 

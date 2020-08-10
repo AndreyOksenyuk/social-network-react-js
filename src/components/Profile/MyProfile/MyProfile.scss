@@ -1,9 +1,7 @@
 .MyProfile {
    width: 100%;
    height: 100%;
-   padding: 20px;
    overflow: auto;
-
    &__posts {
       overflow: auto;
    }
@@ -47,14 +45,15 @@
 .UserInform_wrapper {
    position: relative;
    width: 400px;
-
+   padding: 20px;
    form {
       position: relative;
    }
 
    .openFormBtn {
       position: absolute;
-      right: -50px;
+      left: 0;
+      top: 0;
       color: rgb(63, 99, 216);
       user-select: none;
       cursor: pointer;
@@ -139,11 +138,7 @@
    flex-direction: column;
 
    textarea {
-      max-width: 300px;
-      height: 100px;
-      padding: 10px;
-      font-size: 17px;
-      margin-top: 10px;
+      max-height: 400px;
    }
 }
 

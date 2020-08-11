@@ -1,18 +1,39 @@
-.email{
+.email {
    position: relative;
-   input{
+
+   input {
       width: 275px;
    }
-}
-.emailError{
-   position: relative;
-   input{
-      width: 275px;
-      box-shadow: 0px 0px 10px 1px #FF0808;
+
+   span {
+      padding: 0 5px 0 0 !important;
+
+      input {
+         padding-left: 10px !important;
+         height: 55px;
+      }
    }
 }
 
-.messageError{
+.emailError {
+   position: relative;
+
+   input {
+      width: 275px;
+      box-shadow: 0px 0px 10px 1px #FF0808;
+   }
+
+   span {
+      padding: 0 5px 0 0 !important;
+
+      input {
+         padding-left: 10px !important;
+         height: 55px;
+      }
+   }
+}
+
+.messageError {
    position: absolute;
    bottom: 0;
    left: -350px;
@@ -23,4 +44,3 @@
    padding: 15px 20px;
    clip-path: polygon(0% 0%, 95% 0, 95% 30%, 100% 50%, 95% 70%, 95% 100%, 0 100%);
 }
-

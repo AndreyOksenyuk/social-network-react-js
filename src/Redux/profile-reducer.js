@@ -1,4 +1,4 @@
-import { followedAPI, userAPI } from '../api'
+import { followedAPI, userAPI, updateProfileApi } from '../api'
 import { stopSubmit } from 'redux-form';
 
 const ADD_POST = 'ADD-POST';
@@ -283,7 +283,7 @@ export const getUserStatus = (userId) => (dispatch) => {
 }
 
 export const saveMyPhotoTC = (photo) => (dispatch) => {
-   userAPI.putMyPhoto(photo).then(data => {
+   updateProfileApi.putMyPhoto(photo).then(data => {
       if (data.resultCode === 0) {
          dispatch(setMyPhotos(data.data.photos))
       }
@@ -292,7 +292,7 @@ export const saveMyPhotoTC = (photo) => (dispatch) => {
 
 export const saveMyDataTC = (data, userId) => async (dispatch) => {
    await dispatch(setDisableBtn(true))
-   await userAPI.putMyData(data).then(response => {
+   await updateProfileApi.putMyData(data).then(response => {
 
       if (response.data.resultCode === 0) {
          userAPI.getUserProfile(userId).then(data => {

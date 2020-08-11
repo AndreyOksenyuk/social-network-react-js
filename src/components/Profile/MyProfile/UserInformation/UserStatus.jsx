@@ -1,13 +1,13 @@
 import React, { useState } from 'react';
 import '../MyProfile.scss'
-import { userAPI } from '../../../../api';
+import { updateProfileApi } from '../../../../api';
 
 const UserStatus = React.memo (props => {
    let input = React.createRef()
    let [edidMode, setEdidMode] = useState(true)
    let setMyStatus = () => {
       setEdidMode(true)
-      userAPI.putMyStatus({ status: `${props.myStatus}` })
+      updateProfileApi.putMyStatus({ status: `${props.myStatus}` })
    }
    let changeMyStatus = () => {
       props.changeValueMyStatus(input.current.value)

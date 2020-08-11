@@ -4,7 +4,7 @@ import AddAvatarSVG from '../../../module/SVG/AddAvatar';
 
 const UserAvatar = React.memo (props => {
    
-   let onMyPhoto = (e) => {
+   let onMyPhoto = (e) => { 
       props.saveMyPhotoTC(e.target.files[0])
    }
 

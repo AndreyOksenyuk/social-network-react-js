@@ -23,16 +23,14 @@ code {
 
 .ant-layout {
   height: 100%;
-
 }
 
 .ant-layout-header {  
   position: relative !important;
-  background-color: #006d75 !important;
 }
 
 .ant-layout-sider {
-  background-color: #006d75 !important;
+
 }
 .ant-layout-content{
   padding: 20px !important;
@@ -46,7 +44,6 @@ code {
 
 
 .ant-menu{
-  background-color: #006d75 !important;
   font-size: 16px !important;
   font-weight: 600;
 }
@@ -63,4 +60,9 @@ code {
 .trigger{
   color: rgba(255, 255, 255, 0.692) !important;
   font-size: 30px !important;
+  transition: color 0.1s linear;
+}
+
+.trigger:hover{
+  color: #fff !important;
 }

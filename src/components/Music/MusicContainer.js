@@ -15,6 +15,8 @@ const mapStateToProps = (state) => ({
    valueSearch: state.musicPage.valueSearch,
    showMoreUrl: state.musicPage.showMoreUrl,
    isFeatching: state.musicPage.isFeatching,
+   messageNoFound: state.musicPage.messageNoFound,
+   
 })
 
 export default compose(

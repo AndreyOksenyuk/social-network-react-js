@@ -4,6 +4,7 @@ const SET_MUSIC = 'music-reducer/SET_MUSIC'
 const SET_VALUE_SEARCH = 'music-reducer/SET_VALUE_SEARCH'
 const ADD_MORE_MUSIC = 'music-reducer/ADD_MORE_MUSIC'
 const SET_ISFEATCHING = 'music-reducer/SET_ISFEATCHING'
+const SET_MESSAGE_NO_FOUND = 'music-reducer/SET_MESSAGE_NO_FOUND'
 
 let initialState = {
    songs: [],
@@ -11,6 +12,7 @@ let initialState = {
    limit: 10,
    totalCount: null,
    isFeatching: false,
+   messageNoFound: ''
 }
 
 const MUSIC_REDUSER = (state = initialState, action) => {
@@ -36,6 +38,11 @@ const MUSIC_REDUSER = (state = initialState, action) => {
             ...state,
             isFeatching: action.boolean
          }
+      case SET_MESSAGE_NO_FOUND: 
+         return{
+            ...state,
+            messageNoFound: action.text
+         }
       default:
          return state
    }
@@ -60,13 +67,23 @@ const setIsFeatching = (boolean) => ({
    boolean,
 })
 
+const setMessageNoFound = (text) => ({
+   type: SET_MESSAGE_NO_FOUND,
+   text
+})
 
 
 export const setMusicSearchTC = (query, limit) => (dispatch) => {
 
    musicAPI.getSearchMusic(query, limit).then(response => {
+      if (response.data.total === 0) {
+         dispatch(setMessageNoFound('По вашему запросу не чего не нашлось'))
+         setTimeout(() => {
+            dispatch(setMessageNoFound(''))
+         }, 5000);
+      }
       if (response.status === 200) {
-         dispatch(setMusic(response.data.data, response.data.total))
+         dispatch(setMusic(response.data.data, response.data.total)) 
       }
 
    })
@@ -75,6 +92,7 @@ export const setMusicSearchTC = (query, limit) => (dispatch) => {
 export const addMoreMusicTC = (query, limit, index) => async (dispatch) => {
    await dispatch(setIsFeatching(true))
    await musicAPI.getSearchMusic(query, limit, index).then(response => {
+      
       dispatch(setMoreMusic(response.data.data))
    })
    dispatch(setIsFeatching(false))

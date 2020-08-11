@@ -24,6 +24,7 @@ const SocialNetworkAppContainer = (props) => {
 let mapStateToProps = (state) => ({
    error: state.App.Error,
    textError: state.App.textError,
+   ColorThemeApp: state.App.ColorThemeApp
 })
 
 export default compose(

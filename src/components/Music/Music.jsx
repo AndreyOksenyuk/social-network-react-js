@@ -12,7 +12,7 @@ const Music = (props) => {
       props.setValueSearch(value.music)
    }
 
-   let onShoeMore = () => {
+   let onShowMore = () => {
       setIndex(index + props.limit)
       props.addMoreMusicTC(props.valueSearch, props.limit, index)
    }
@@ -21,10 +21,10 @@ const Music = (props) => {
    return (
       <div className={style.Music}>
          <SearchMusic onSubmit={submitSerchMusic} />
-         <MusicList songs={props.songs} />
+         <MusicList songs={props.songs} messageNoFound={props.messageNoFound} onShowMore={onShowMore}/>
 
          {props.songs.length !== 0 && <button
-            onClick={onShoeMore}
+            onClick={onShowMore}
             className={style.showMoreBtn}
             disabled={props.isFeatching}
          >

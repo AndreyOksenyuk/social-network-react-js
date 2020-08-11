@@ -6,7 +6,7 @@ let instance = axios.create({
 
    baseURL: 'https://social-network.samuraijs.com/api/1.0/',
    headers: {
-      'API-KEY': networkKey,  
+      'API-KEY': networkKey,
    }
 })
 export let followedAPI = {
@@ -35,8 +35,9 @@ export let userAPI = {
          return response.data
       })
    },
-   getUsers(numberOfPages, numberOfUsers) {
-      return instance.get(`users?page=${numberOfPages}&count=${numberOfUsers}`).then(response => {
+   getUsers(numberOfPages, numberOfUsers, friend='all', term = '') {
+      return instance.get(`users?page=${numberOfPages}&count=${numberOfUsers}&friend=${friend}&term=${term}`)
+      .then(response => {
          return response.data
       })
    },
@@ -45,6 +46,10 @@ export let userAPI = {
          return response.data
       })
    },
+
+}
+
+export const updateProfileApi = {
    putMyStatus(status) {
       return instance.put(`profile/status`, status)
    },
@@ -66,7 +71,6 @@ export const authAPI = {
          return response.data
       });
    },
-
    postLogin(email, password, rememberMe, captcha) {
       return instance.post(`auth/login`, { email, password, rememberMe, captcha })
    },

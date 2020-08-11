@@ -1,12 +1,24 @@
 import React from 'react';
-import s from './Settings.module.scss'
+import style from './Settings.module.scss'
+import { BgColorsOutlined } from '@ant-design/icons';
 
 
 const Setting = (props) => {
-   return ( 
-   <div className = {s.setting} >
-      <h1>{props.text}</h1>
-   </div>
+   
+   let onChoiceColor = (e) => {
+      props.setColorThemeApp(e.target.value)
+   }
+
+   return (
+      <div className={style.setting} >
+         <h3>Настройки</h3>
+         <div className={style.choiceColor}>
+            <p>Цвет шапки и сайдбара:</p>
+            <BgColorsOutlined style={{fontSize: '20px'}}/>
+            <label htmlFor='inputColor'>Выберите цвет - </label>
+            <input id='inputColor' type='color' onBlur={onChoiceColor}></input>
+         </div>   
+      </div>
    )
 }
 

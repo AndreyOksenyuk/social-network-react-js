@@ -1,7 +1,7 @@
 import React from 'react';
 import { Route, HashRouter, Redirect, Switch } from 'react-router-dom';
 import 'antd/dist/antd.css';
-import { Layout, Menu } from 'antd';
+import { Layout, Menu, Modal } from 'antd';
 import {
    MenuUnfoldOutlined,
    MenuFoldOutlined,
@@ -35,13 +35,24 @@ const { Header, Footer, Sider, Content } = Layout;
 
 const SocialNetworkApp = (props) => {
    let [collapsed, setCollapsed] = useState(false)
+   let [visible, setVisible] = useState(false)
 
    let toggle = () => {
       setCollapsed(collapsed = !collapsed)
    };
-   let Logout = () => {
+   let showModal = () => {
+      setVisible(true);
+   };
+
+   let handleOk = () => {
       props.logout()
-   }
+      setVisible(false);
+      return <Redirect to="/login" />
+   };
+
+   let handleCancel = () => {
+      setVisible(false);
+   };
 
    return (
       <HashRouter>
@@ -55,14 +66,28 @@ const SocialNetworkApp = (props) => {
                <p>{props.textError}</p>
             </div>
 
+            <Modal
+               cancelText="Нет"
+               okText="Да"
+               visible={visible}
+               onOk={handleOk}
+               onCancel={handleCancel}
+            >
+               <b style={{ fontSize: '22px' }}>Вы действительно хотите выйти?</b>
+            </Modal>
+
 
             <Layout>
 
-               <Sider trigger={null} collapsible collapsed={collapsed}>
+               <Sider style={{ backgroundColor: props.ColorThemeApp || '#006d75' }}
+                  trigger={null}
+                  collapsible
+                  collapsed={collapsed}
+               >
                   <div className="logo" />
-                  <Menu theme="dark" mode="inline" defaultSelectedKeys={['1']}>
+                  <Menu style={{ backgroundColor: props.ColorThemeApp || '#006d75' }} theme="dark" mode="inline" defaultSelectedKeys={['1']}>
                      <div className="ButtonMenu">
-                        {collapsed 
+                        {collapsed
                            ? <MenuUnfoldOutlined className='trigger' onClick={toggle} />
                            : <MenuFoldOutlined className='trigger' onClick={toggle} />
                         }
@@ -85,14 +110,14 @@ const SocialNetworkApp = (props) => {
                      <Menu.Item key="6" icon={<SettingOutlined />}>
                         <NavLink to="/setting" replace >Настройки</NavLink>
                      </Menu.Item>
-                     <Menu.Item key="7" icon={<LogoutOutlined />}>
-                        <NavLink to="/login" replace onClick={Logout}>Выход</NavLink>
+                     <Menu.Item key="7" icon={<LogoutOutlined onClick={showModal}/>} id={style.Exit}>
+                        <span onClick={showModal}>Выход</span>
                      </Menu.Item>
                   </Menu>
                </Sider>
 
                <Layout>
-                  <Header>
+                  <Header style={{ backgroundColor: props.ColorThemeApp || '#006d75' }}>
                      <HeaderContainer />
                   </Header>
                   <Content>

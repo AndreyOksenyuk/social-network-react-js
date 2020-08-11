@@ -32,7 +32,7 @@ $gray-light: #f5f6f8;
 }
 
 .lf--label {
-   width: 2em;
+   width: 50px;
    display: flex;
    align-items: center;
    justify-content: center;
@@ -42,7 +42,7 @@ $gray-light: #f5f6f8;
 
 .lf--input {
    flex: 1;
-   padding: 1em;
+   padding: 1em ;
    border: 0;
    color: $gray;
    font-size: 1rem;

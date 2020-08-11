@@ -7,6 +7,8 @@ const SET_PAGE = 'SET-PAGE';
 const SET_TOTAL_COUNT = 'SET-TOTAL-COUNT'
 const IS_FETCHING = 'IS_FETCHING'
 const DISABLE_SUBSCRIBE_BTN = 'DISABLE_SUBSCRIBE_BTN'
+const SET_IS_FRIEND = 'set-friend-value/SET_IS_FRIEND'
+const SET_TERM_FIEND_USER = 'set-value-term/SET_TERM_FIEND_USER'
 
 let initialState = {
    users: [],
@@ -15,7 +17,9 @@ let initialState = {
    totalUsersCount: 0,
    isFetching: false,
    portitionSize: 10,
-   disableSubscribeBtn: []
+   disableSubscribeBtn: [],
+   isFriend: 'all',
+   term: '',
 }
 
 let USERS_REDUCER = (state = initialState, action) => {
@@ -68,7 +72,17 @@ let USERS_REDUCER = (state = initialState, action) => {
                ?  [...state.disableSubscribeBtn, action.userId] 
                :  state.disableSubscribeBtn.filter(id => id !== action.userId) 
                
-         }                            
+         } 
+      case SET_IS_FRIEND:
+         return{
+            ...state,
+            isFriend: action.friend
+         }  
+      case SET_TERM_FIEND_USER:
+         return{
+            ...state,
+            term: action.value
+         }                      
       default:
          return state;
    }
@@ -118,10 +132,21 @@ export let disableBtn = (userId, isFeatching) => {
    }
 }
 
-export const getUsersThankCreator = (numberOfPages, numberOfUsers) => {
+export const setIsFriend = (friend) => ({
+   type: SET_IS_FRIEND,
+   friend
+})
+
+export const setTermSearch = (value) => ({
+   type: SET_TERM_FIEND_USER,
+   value
+})
+
+
+export const getUsersThankCreator = (numberOfPages, numberOfUsers, friend, term) => {
    return (dispatch) => {
       dispatch(isFetching(true))
-      userAPI.getUsers(numberOfPages, numberOfUsers).then(data => {
+      userAPI.getUsers(numberOfPages, numberOfUsers, friend, term).then(data => {
          dispatch(setUsers(data.items))
          dispatch(setTotalCount(data.totalCount))
          dispatch(isFetching(false))

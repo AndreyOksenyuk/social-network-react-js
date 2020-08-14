@@ -25,23 +25,31 @@ let initialState = {
             id: 6,
             user: 'Dimon',
          },
+         {
+            id: 79878779,
+            user: 'Roma',
+         },
       ],
 
       message: [{
             id: 1,
-            message: 'Hello!!! It is my first message. How are you?'
+            message: 'Hello!!! It is my first message. How are you?',
+            date: '13.07.2020 11:33'
          },
          {
             id: 2,
-            message: 'Hello! i am ok)'
+            message: 'Hello! i am ok)',
+            date: '13.07.2020 14:23'
          },
          {
             id: 3,
-            message: 'Hello!!!'
+            message: 'Hello!!!',
+            date: '13.07.2020 01:24'
          },
          {
             id: 4,
-            message: 'Bye!'
+            message: 'Bye!',
+            date: '13.07.2020 13:12',
          },
       ],
 }
@@ -49,9 +57,13 @@ let initialState = {
 let  MESSAGE_REDUCER = (state = initialState, action) => {
    switch (action.type) {
       case ADD_NEW_MESSAGE:
+         let d = new Date()
+         let month = 1 + d.getUTCMonth()
+         let date = d.getDate() + '.' + month + '.' + d.getFullYear() + " " + d.getHours() + ":" + d.getMinutes()
          let message = {
             id: Date.now(),
-            message: action.message
+            message: action.message,
+            date: date,
          }
          return{
             ...state,

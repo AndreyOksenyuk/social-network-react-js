@@ -9,10 +9,9 @@ let mapStateToProps = (state) => ({
 
 let mapDispatchToProps = (dispatch) => {
    return {
-      addPost: (post) => {
-         dispatch(actionCreatorAddPost(post))
-         dispatch(reset('addPostProfile'))
-         
+      addPost: (post, avatar, name) => {
+         dispatch(actionCreatorAddPost(post, avatar, name))
+         dispatch(reset('addPostProfile'))  
       },
       changePost: (post) => {
          dispatch(actionCreatorChangePost(post))

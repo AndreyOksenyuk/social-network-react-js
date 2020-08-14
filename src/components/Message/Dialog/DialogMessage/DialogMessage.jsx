@@ -1,11 +1,20 @@
 import React from 'react';
-import s from './DialogMessage.module.scss'
+import style from './DialogMessage.module.scss'
+import img from '../../../../assets/Image/ava.jpg'
 
 const DialogMessage = (props) => {
+ 
+ 
    return (
-      <div className={s.dialog_inner}>
+      <div className={style.dialog_inner}>
          {props.message.map(m => {
-            return <p key={m.id}> {m.message} </p>
+            return (
+               <div className={style.message_item} key={m.id}>
+                  <img src={img} alt="avatar" className={style.avatar}/>
+                  <p key={m.id}>{m.message}</p>
+                  <span className={style.date}>{m.date}</span>
+               </div>
+            )
          })}
       </div>
       

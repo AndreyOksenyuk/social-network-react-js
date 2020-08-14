@@ -1,19 +1,22 @@
 import { followedAPI, userAPI, updateProfileApi } from '../api'
 import { stopSubmit } from 'redux-form';
 
-const ADD_POST = 'ADD-POST';
-const NEW_POST = 'NEW-POST';
-const LIKE = 'LIKE';
-const DIS_LIKE = 'DIS-LIKE';
-const USER_PROFILE = 'USER_PROFILE'
-const SET_FOLLOWED_USER = 'SET-FOLLOWED-USER'
-const GET_USER_STATUS = 'GET_USER_STATUS'
-const CHANGE_MY_STATUS = 'CHANGE_MY_STATUS'
-const SET_MY_PHOTOS = 'SET_MY_PHOTOS'
-const FOLLOWED_TOGLE = 'FOLLOWED_TOGLE'
-const SET_IS_PUT_DATA = 'SET_IS_PUT_DATA'
-const SET_DISABLE_BTN = 'SET_DISABLE_BTN'
+const ADD_POST = 'profile-reduser/ADD-POST';
+const NEW_POST = 'profile-reduser/NEW-POST';
+const LIKE = 'profile-reduser/LIKE';
+const DIS_LIKE = 'profile-reduser/DIS-LIKE';
+const USER_PROFILE = 'profile-reduser/USER_PROFILE'
+const SET_FOLLOWED_USER = 'profile-reduser/SET-FOLLOWED-USER'
+const GET_USER_STATUS = 'profile-reduser/GET_USER_STATUS'
+const CHANGE_MY_STATUS = 'profile-reduser/CHANGE_MY_STATUS'
+const SET_MY_PHOTOS = 'profile-reduser/SET_MY_PHOTOS'
+const FOLLOWED_TOGLE = 'profile-reduser/FOLLOWED_TOGLE'
+const SET_IS_PUT_DATA = 'profile-reduser/SET_IS_PUT_DATA'
+const SET_DISABLE_BTN = 'profile-reduser/SET_DISABLE_BTN'
 const SET_USERID_PROFILE = 'profile-user-id/SET_USERID_PROFILE'
+const DELETE_POST_PROFILE = 'profile-reduser/DELETE_POST_PROFILE'
+const EDIT_MESSAGE_PROFILE_POST = 'profile-reduser/EDIT_MESSAGE_PROFILE_POST'
+const SET_EDIT_POST = 'profile-reduser/SET_EDIT_POST'
 
 let initialState = {
    User: {},
@@ -26,57 +29,18 @@ let initialState = {
    userId: null,
    posts: [{
       id: 1,
-      user: 'Andery',
-      message: 'Hello how are you?',
+      user: 'User test',
+      message: 'My first post!)',
+      edit: false,
       like: {
          status: true,
-         count: 56,
-      },
-      disLike: {
-         status: false,
          count: 3,
-      }
-   },
-   {
-      id: 2,
-      user: 'Dimon',
-      message: 'Hello! I am ok) And you?',
-      like: {
-         status: false,
-         count: 8,
       },
       disLike: {
          status: false,
          count: 0,
       }
-   },
-   {
-      id: 3,
-      user: 'Ivan',
-      message: 'My first posts...',
-      like: {
-         status: false,
-         count: 5,
-      },
-      disLike: {
-         status: true,
-         count: 5,
-      }
-   },
-   {
-      id: 4,
-      user: 'Ivan',
-      message: 'Bye!',
-      like: {
-         status: false,
-         count: 2,
-      },
-      disLike: {
-         status: true,
-         count: 7,
-      }
-   }
-   ],
+   },],
 }
 
 let PROFILE_REDUCER = (state = initialState, action) => {
@@ -84,8 +48,10 @@ let PROFILE_REDUCER = (state = initialState, action) => {
       case ADD_POST:
          let newPost = {
             id: Date.now(),
-            user: 'User name',
+            user: action.name,
+            avatar: action.avatar,
             message: action.post,
+            edit: false,
             like: {
                status: false,
                count: 0,
@@ -104,7 +70,6 @@ let PROFILE_REDUCER = (state = initialState, action) => {
             ...state,
             newPostText: action.text,
          }
-
       case LIKE:
          if (!state.posts[action.index].like.status) {
             return {
@@ -211,14 +176,36 @@ let PROFILE_REDUCER = (state = initialState, action) => {
             ...state,
             userId: action.id,
          }
+      case DELETE_POST_PROFILE:
+         return {
+            ...state,
+            posts: state.posts.filter(e => e.id !== action.id)
+         }
+      case EDIT_MESSAGE_PROFILE_POST:
+         return {
+            ...state,
+            posts: state.posts.map(post => post.id === action.id
+               ? { ...post, message: action.message }
+               : post
+            )
+         }
+      case SET_EDIT_POST:
+         return{
+            ...state,
+            posts: state.posts.map(post => {
+               return post.id === action.id 
+               ? {...post, edit: action.boolean} 
+               : post
+            })
+         }
       default:
          return state;
    }
 }
 
-export let actionCreatorAddPost = (post) => ({
+export let actionCreatorAddPost = (post, avatar, name) => ({
    type: ADD_POST,
-   post,
+   post, avatar, name
 })
 export let actionCreatorChangePost = (text) => ({
    type: NEW_POST,
@@ -267,6 +254,20 @@ export const setUserIdProfile = (id) => ({
    type: SET_USERID_PROFILE,
    id
 })
+
+export const deletePostProfileAC = (id) => ({
+   type: DELETE_POST_PROFILE,
+   id
+})
+export const setEditMessagePostAC = (id, message) => ({
+   type: EDIT_MESSAGE_PROFILE_POST,
+   id, message
+})
+export const setEditPostAC = (boolean, id) => ({
+   type: SET_EDIT_POST,
+   boolean, id
+})
+
 
 export const getUserProfileThankCreator = (userId) => async (dispatch) => {
    await dispatch(setIsPutData(true))

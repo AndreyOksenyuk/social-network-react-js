@@ -5,13 +5,14 @@
    &__posts {
       margin: 0 auto;
       max-width: 650px;
-      
+      width: 70%;
    }
 
 }
 
 .MyProfile__user {
    display: flex;
+   flex-wrap: wrap;
    min-height: 400px;
    margin-bottom: 100px;
 }

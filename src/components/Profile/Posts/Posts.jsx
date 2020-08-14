@@ -1,28 +1,25 @@
 import React from 'react';
-import s from './Post.module.scss'
-import img from '../../../assets/Image/ava.jpg'
-import 'font-awesome/css/font-awesome.min.css';
+import style from './Post.module.scss'
+import { useDispatch } from 'react-redux';
+import { actionCreatorLike, actionCreatorDisLike } from '../../../Redux/profile-reducer';
 
-const Posts = (props) => { 
+const Posts = (props) => {
+   const dispatch = useDispatch()
 
-   let onLike = function () {
-      props.setLike(props.index)
+   let onLike = () => {
+      dispatch(actionCreatorLike(props.index))
    }
-   let onDisLike = function () {
-      props.setDisLike(props.index)
+   let onDisLike = () => {
+      dispatch(actionCreatorDisLike(props.index))
    }
 
    return (
-      <div className={s.Posts}>
-         <div className={s.post}>         
-            <img src={img} alt="ava"/>
-            <i>{props.posts.user}</i>
-         </div>
+      <div className={style.Posts}>
+
          <p>{props.posts.message}</p>
 
-         <div className={s.likeAndDisLike}>
-            <div 
-               className={props.posts.like.status ? s.likeActive : s.noActiv}
+         <div className={style.likeAndDisLike}>
+            <div className={props.posts.like.status ? style.likeActive : style.noActiv}
                onClick={onLike}
             >
                <div className="fa fa-thumbs-up" aria-hidden="true">
@@ -30,17 +27,16 @@ const Posts = (props) => {
                </div>
             </div>
 
-            <div 
-               className={props.posts.disLike.status ? s.likeActive : s.noActiv}
+            <div
+               className={props.posts.disLike.status ? style.likeActive : style.noActiv}
                onClick={onDisLike}
             >
                <div className="fa fa-thumbs-down" aria-hidden="true">
                   <span>{props.posts.disLike.count}</span>
-               </div> 
+               </div>
             </div>
          </div>
       </div>
-
    )
 }
 

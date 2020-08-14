@@ -1,5 +1,6 @@
 .Posts {
    margin-bottom: 50px;
+
    span {
       color: #fff;
       font-weight: 800;
@@ -7,7 +8,7 @@
    }
 
    p {
-      width: 400px;
+      width: 90%;
       padding: 20px;
       background-color: rgb(248, 248, 248);
       overflow: hidden;
@@ -15,13 +16,15 @@
    }
 }
 
-.MapPosts{
+.MapPosts {
    width: 100%;
    padding: 0 50px;
 }
 
-.post{
+.post {
+   position: relative;
    display: flex;
+   justify-content: space-between;
    align-items: center;
    width: 100%;
    height: auto;
@@ -31,52 +34,100 @@
    margin: 10px;
    font-size: 18px;
    font-weight: 700;
-   img{
-      top: 10px;
-      left: 10px;
-      width: 40px;
+
+   &_inner {
+      display: flex;
+      align-items: center;
+      padding: 0 10px;
+      width: 80%;
       height: 40px;
-      border-radius: 50%;
-      margin: 10px;
+      img {
+         top: 10px;
+         left: 10px;
+         width: 30px;
+         height: 30px;
+         border-radius: 50%;
+         margin-right: 10px;
+      }
    }
 
+   .deleteSVG {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      width: 10%;
+      font-size: 20px;
+      border: none;
+      background-color: rgba(255, 255, 255, 0);
+      outline: none;
+      border-radius: 10px;
+
+      cursor: pointer;
+
+      span {
+         margin: 0;
+         transition: all 0.2s linear;
+      }
+
+      &:hover {
+         span {
+            color: rgb(156, 4, 4);
+            transform: scale(1.2);
+         }
+      }
+   }
+
+
+
+}   
+.EditIcon {
+   width: 10%;
+   transition: all 0.2s linear;
+   cursor: pointer;
+   &:hover{
+      color: rgb(36, 99, 138);
+      transform: scale(1.2);
+   }
 }
 
-.likeAndDisLike{
+.likeAndDisLike {
    display: flex;
    justify-content: space-between;
    width: 120px;
    margin: 10px 20px;
-   div{
+
+   div {
       width: 20%;
       margin-right: 20px;
       padding-right: 5px;
       cursor: pointer;
-      span{
+
+      span {
          font-family: Cambria;
          font-weight: 300;
          color: rgb(0, 0, 0);
          margin: 10px;
-           -ms-user-select: none;
-           -moz-user-select: none;
-           -khtml-user-select: none;
-           -webkit-user-select: none;
+         -ms-user-select: none;
+         -moz-user-select: none;
+         -khtml-user-select: none;
+         -webkit-user-select: none;
       }
    }
 }
 
-.likeActive{
+.likeActive {
    color: rgb(41, 73, 255);
-   &:hover{
+
+   &:hover {
       color: rgb(34, 62, 224);
    }
 }
-.noActiv{
+
+.noActiv {
    color: rgb(105, 105, 105);
-      &:hover {
-         color: rgb(77, 77, 77);
-      }
+
+   &:hover {
+      color: rgb(77, 77, 77);
+   }
 }
-
-
-

@@ -1,6 +1,7 @@
 import React from 'react';
 import { Route, HashRouter, Redirect, Switch } from 'react-router-dom';
 import 'antd/dist/antd.css';
+import 'font-awesome/css/font-awesome.min.css';
 import { Layout, Menu, Modal } from 'antd';
 import {
    MenuUnfoldOutlined,
@@ -41,7 +42,9 @@ const SocialNetworkApp = (props) => {
       setCollapsed(collapsed = !collapsed)
    };
    let showModal = () => {
-      setVisible(true);
+      if (props.isAuth) {
+         setVisible(true);
+      }
    };
 
    let handleOk = () => {
@@ -110,7 +113,7 @@ const SocialNetworkApp = (props) => {
                      <Menu.Item key="6" icon={<SettingOutlined />}>
                         <NavLink to="/setting" replace >Настройки</NavLink>
                      </Menu.Item>
-                     <Menu.Item key="7" icon={<LogoutOutlined onClick={showModal}/>} id={style.Exit}>
+                     <Menu.Item key="7" icon={<LogoutOutlined onClick={showModal} />} id={style.Exit}>
                         <span onClick={showModal}>Выход</span>
                      </Menu.Item>
                   </Menu>
@@ -121,7 +124,7 @@ const SocialNetworkApp = (props) => {
                      <HeaderContainer />
                   </Header>
                   <Content>
-                     <main className={style.mainContent}>
+                     <div className={style.mainContent}>
                         <Switch>
                            <Route
                               exact path='/'
@@ -166,7 +169,7 @@ const SocialNetworkApp = (props) => {
                               component={Page404}
                            />
                         </Switch>
-                     </main>
+                     </div>
                   </Content>
 
                   <Footer><FooterContent /></Footer>

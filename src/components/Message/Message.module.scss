@@ -1,8 +1,11 @@
 
 .dialog {
    display: flex;
-   background-color: rgba(224, 224, 224, 0.986);
+   max-width: 500px;
+   margin: 0 auto;
+   background-color: rgba(0, 0, 0, 0);
    flex-direction: column;
+   overflow: auto;
 }
 
 .messages {

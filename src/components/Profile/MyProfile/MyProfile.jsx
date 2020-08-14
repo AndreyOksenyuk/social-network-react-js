@@ -2,7 +2,6 @@ import React from 'react';
 import './MyProfile.scss';
 import AddPostContainer from '../Posts/AddPost/AddPostContainer';
 import MapPostContainer from '../Posts/MapPosts/MapPostContainer';
-
 import UserInfo from './UserInformation/UserInfo';
 import UserAvatar from './UserInformation/UserAvatar';
 

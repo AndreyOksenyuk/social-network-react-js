@@ -1,20 +1,21 @@
-.form{
+.form {
    position: relative;
    width: 100%;
-   textarea{
-   width: 100%;
-   max-height: 120px;
-   margin: 30px 0;
-   padding: 10px;
-   margin-bottom: 10px;
-   border-radius: 5px;
-   outline: none;
-   box-shadow: -5px 5px 19px 0px rgba(0, 0, 0, 0.15);
-}
+
+   textarea {
+      width: 100%;
+      max-height: 120px;
+      margin: 30px 0;
+      padding: 10px;
+      margin-bottom: 10px;
+      border-radius: 5px;
+      outline: none;
+      box-shadow: -5px 5px 19px 0px rgba(0, 0, 0, 0.15);
+   }
 }
 
 
-.textError{
+.textError {
    position: absolute;
    top: 5px;
    left: 20px;

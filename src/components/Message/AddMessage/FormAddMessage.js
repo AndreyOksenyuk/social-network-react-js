@@ -11,7 +11,7 @@ const FormAddMessage = (props) => {
             component={Textarea}
             validate={[maxLength500]}
          ></Field>
-         <button>add message</button>
+         <button className='Button'>Отправить</button>
       </form>
    );
 }

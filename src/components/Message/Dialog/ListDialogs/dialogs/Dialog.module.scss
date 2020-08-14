@@ -3,36 +3,32 @@
    text-decoration: none;
    color: rgb(172, 172, 172);
 }
-.active {
-   .listItem {
-      background-color: rgb(245, 245, 245);
 
-      p {
-         color: rgb(0, 0, 0);
-      }
-   }
-}
 
-.listItem {
+.listItem {   
    display: flex;
    align-items: center;
    width: 100%;
-   height: 60px;
-   background-color: #fff;
-   border: 1px #ccc solid;
+   height: 40px;
    margin-bottom: 5px;
    cursor: pointer;
-}
-
-.listItem {
    img {
-      width: 40px;
-      height: 40px;
+      width: 30px;
+      height: 30px;
       border-radius: 50%;
       margin: 0 10px 0 5px;
    }
 
    p {
       font-weight: 700;
+   }
+}
+.active {
+   .listItem {
+      background-color: rgba(0, 0, 0, 0.116);
+      border-radius: 50px;
+      p {
+         color: rgb(0, 0, 0);
+      }
    }
 }

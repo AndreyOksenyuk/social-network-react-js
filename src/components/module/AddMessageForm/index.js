@@ -1,10 +1,13 @@
 import React from 'react';
 import style from './AddMessageForm.module.scss'
+import { Input } from 'antd';
+
+const { TextArea } = Input;
 
 const Textarea = ({input, meta, ...props}) => {
    return (
       <div className={style.form}>
-         <textarea {...input} {...props} className={meta.valid ? style.textarea : style.noValid}/>
+         <TextArea {...input} {...props} className={meta.valid ? style.textarea : style.noValid}/>
          {
             !meta.valid &&
              <p>{meta.error}</p>

@@ -7,6 +7,8 @@ let mapStateToProps = (state) => {
    }
 }
 
-const DialogMessageContainer = connect(mapStateToProps)(DialogMessage)
+const DialogMessageContainer = connect(mapStateToProps, {
+   
+})(DialogMessage)
 
 export default DialogMessageContainer;

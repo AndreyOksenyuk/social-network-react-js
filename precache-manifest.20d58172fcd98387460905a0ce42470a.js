@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "e12728d8b164336fab97563584c81e22",
+    "revision": "e1237034059deef5041bdcd12d0a046b",
     "url": "/social-network-react-js/index.html"
   },
   {
@@ -8,15 +8,15 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/social-network-react-js/static/css/2.484d4b2d.chunk.css"
   },
   {
-    "revision": "e2544672840564d756c4",
-    "url": "/social-network-react-js/static/css/3.f1c0a7ee.chunk.css"
+    "revision": "b5b97fcb8a2ad60c20f2",
+    "url": "/social-network-react-js/static/css/3.7b11ea3c.chunk.css"
   },
   {
     "revision": "40d084e645476f0f702d",
     "url": "/social-network-react-js/static/css/4.4218daef.chunk.css"
   },
   {
-    "revision": "cc3f2583c20748d773a5",
+    "revision": "7667942c0d397697c2f6",
     "url": "/social-network-react-js/static/css/5.c09a1251.chunk.css"
   },
   {
@@ -32,24 +32,24 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/social-network-react-js/static/js/2.5a124ba5.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "e2544672840564d756c4",
-    "url": "/social-network-react-js/static/js/3.2d286d9a.chunk.js"
+    "revision": "b5b97fcb8a2ad60c20f2",
+    "url": "/social-network-react-js/static/js/3.fd43cce9.chunk.js"
   },
   {
     "revision": "40d084e645476f0f702d",
     "url": "/social-network-react-js/static/js/4.ef77ddfa.chunk.js"
   },
   {
-    "revision": "cc3f2583c20748d773a5",
-    "url": "/social-network-react-js/static/js/5.7173f19d.chunk.js"
+    "revision": "7667942c0d397697c2f6",
+    "url": "/social-network-react-js/static/js/5.b3da7ea2.chunk.js"
   },
   {
     "revision": "77147a79b7c5336a9eff",
     "url": "/social-network-react-js/static/js/main.a7de3a1e.chunk.js"
   },
   {
-    "revision": "66df273102bc66f138d4",
-    "url": "/social-network-react-js/static/js/runtime-main.a1c3fba5.js"
+    "revision": "6cd06f21d08a711a7ac8",
+    "url": "/social-network-react-js/static/js/runtime-main.570bc7bc.js"
   },
   {
     "revision": "2dca3c788af036452912f76a8a6edff7",

@@ -1,3 +1,3 @@
 ### Данные тестового аккаунта:
-**Email:** free@samuraijs.com 
+**Email:** free@samuraijs.com   
 **Password:** free

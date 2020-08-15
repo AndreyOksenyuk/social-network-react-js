@@ -5,17 +5,14 @@ import style from './Pagination.module.scss'
 
 
 const PaginationAntDesign = (props) => {
-   const onChange = (pageNumber) => {
-      props.onSetPage(pageNumber)
-   }
    return (
       <div className={style.pagination}>
          <Pagination
-            defaultPageSize={6}
-            defaultCurrent={1}
+            defaultPageSize={props.defaultPageSize}
+            defaultCurrent={props.defaultCurrent}
             showSizeChanger={false}
-            total={props.totalUsersCount}
-            onChange={onChange} />
+            total={props.totalCount}
+            onChange={props.onChange} />
       </div>
    );
 }

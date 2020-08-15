@@ -1,14 +1,14 @@
 import {followedAPI, userAPI} from '../api'
 
-const FOLLOW = 'FOLLOW';
-const UNFOLLOW = 'UNFOLLOW';
-const SET_USERS = 'SET-USERS';
-const SET_PAGE = 'SET-PAGE';
-const SET_TOTAL_COUNT = 'SET-TOTAL-COUNT'
-const IS_FETCHING = 'IS_FETCHING'
-const DISABLE_SUBSCRIBE_BTN = 'DISABLE_SUBSCRIBE_BTN'
-const SET_IS_FRIEND = 'set-friend-value/SET_IS_FRIEND'
-const SET_TERM_FIEND_USER = 'set-value-term/SET_TERM_FIEND_USER'
+const FOLLOW = 'user-reduser/FOLLOW';
+const UNFOLLOW = 'user-reduser/UNFOLLOW';
+const SET_USERS = 'user-reduser/SET-USERS';
+const SET_PAGE = 'user-reduser/SET-PAGE';
+const SET_TOTAL_COUNT = 'user-reduser/SET-TOTAL-COUNT'
+const IS_FETCHING = 'user-reduser/IS_FETCHING'
+const DISABLE_SUBSCRIBE_BTN = 'user-reduser/DISABLE_SUBSCRIBE_BTN'
+const SET_IS_FRIEND = 'user-reduser/set-friend-value/SET_IS_FRIEND'
+const SET_TERM_FIEND_USER = 'user-reduser/set-value-term/SET_TERM_FIEND_USER'
 
 let initialState = {
    users: [],
@@ -58,7 +58,7 @@ let USERS_REDUCER = (state = initialState, action) => {
       case SET_TOTAL_COUNT:
          return {
             ...state,
-            totalUsersCount: action.totalCount
+            totalUsersCount: action.number
          }                            
       case IS_FETCHING:
          return {
@@ -90,43 +90,43 @@ let USERS_REDUCER = (state = initialState, action) => {
 
 export let follow = (id) => {
    return {
-      type: 'FOLLOW',
+      type: FOLLOW,
       id: id,
    }
 }
 export let unfollow = (id) => {
    return {
-      type: 'UNFOLLOW',
-      id: id,
+      type: UNFOLLOW,
+      id,
    }
 }
 export let setUsers = (users) => {
    return {
-      type: 'SET-USERS',
-      users: users,
+      type: SET_USERS,
+      users,
    }
 }
 export let setPage = (page) => {
    return {
-      type: 'SET-PAGE',
-      page: page,
+      type: SET_PAGE,
+      page,
    }
 }
 export let setTotalCount = (number) => {
    return {
-      type: 'SET-TOTAL-COUNT',
-      totalCount: number,
+      type: SET_TOTAL_COUNT,
+      number,
    }
 }
 export let isFetching = (isFetching) => {
    return {
-      type: 'IS_FETCHING',
+      type: IS_FETCHING,
       isFetching,
    }
 }
 export let disableBtn = (userId, isFeatching) => {
    return {
-      type: 'DISABLE_SUBSCRIBE_BTN',
+      type: DISABLE_SUBSCRIBE_BTN,
       userId, isFeatching
 
    }

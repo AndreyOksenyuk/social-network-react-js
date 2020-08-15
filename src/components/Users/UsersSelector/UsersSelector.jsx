@@ -23,7 +23,7 @@ const UsersSelector = React.memo(props => {
          <Select
             showSearch
             style={{ width: 200, boxShadow: '7px 6px 12px 4px rgba(0,0,0,0.3)' }}
-            placeholder="Select a person"
+            placeholder="Сортировать"
             optionFilterProp="children"
             onChange={onChange}
             onSearch={onSearch}

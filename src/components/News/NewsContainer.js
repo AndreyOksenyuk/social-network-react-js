@@ -17,6 +17,7 @@ const NewsContainer = (props) => {
 
 let mapStateToProps = (state) => ({
    news: state.newsPage.MainNews,
+   totalResults: state.newsPage.totalResults,
 })
 
 export default compose(

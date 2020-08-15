@@ -1,10 +1,11 @@
 import { authAPI } from '../api'
 import { stopSubmit } from 'redux-form'
-const SET_AUTH_DATA = 'SET_AUTH_DATA'
-const LOGIN_SET_ME_ID = 'LOGIN_SET_ME_ID'
-const LOGOUT = 'LOGOUT'
-const SET_CAPTCHA_URL = 'SET_CAPTCHA_URL'
-const DISABLE_SUBMIT_BUTTON = 'DISABLE_SUBMIT_BUTTON'
+
+const SET_AUTH_DATA = 'auth-setMyAvatar/SET_AUTH_DATA'
+const LOGIN_SET_ME_ID = 'auth-setMyAvatar/LOGIN_SET_ME_ID'
+const LOGOUT = 'auth-setMyAvatar/LOGOUT'
+const SET_CAPTCHA_URL = 'auth-setMyAvatar/SET_CAPTCHA_URL'
+const DISABLE_SUBMIT_BUTTON = 'auth-setMyAvatar/DISABLE_SUBMIT_BUTTON'
 const SET_MY_AVATAR = 'auth-setMyAvatar/SET_MY_AVATAR'
 
 let initialState = {

@@ -7,8 +7,7 @@ let instanceNews = axios.create({
 })
 
 export let newsAPI = {
-
-   getNewsSearch(country = 'ua') {
-      return instanceNews.get(`top-headlines?country=${country}&apiKey=${newskey}`)
+   getNewsSearch(page = 1, country = 'ua') {
+      return instanceNews.get(`top-headlines?country=${country}&page=${page}&apiKey=${newskey}`)
    },
 }

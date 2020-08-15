@@ -1,5 +1,5 @@
-const SET_ERROR = 'SET_ERROR'
-const SET_COLOR_THEME_APP = 'SET_COLOR_THEME_APP'
+const SET_ERROR = 'app-reducer/SET_ERROR'
+const SET_COLOR_THEME_APP = 'app-reducer/SET_COLOR_THEME_APP'
 
 let initialState = {
    Error: null,

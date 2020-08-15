@@ -1,8 +1,267 @@
 export let newsState =  {
-   "status": "ok",
-      "totalResults": 38,
          "articles": [
             {
+               "source": {
+                  "id": null,
+                  "name": "Zaxid.net"
+               },
+               "author": "zaxid.net",
+               "title": "Голова ЦВК заявив про тиск з боку наближених до Офісу президента людей — ZAXID.NET - zaxid.net",
+               "description": "Голові ЦВК і чотирьом її членам рекомендували звільнитися",
+               "url": "https://zaxid.net/golova_tsvk_zayaviv_pro_tisk_z_boku_nablizhenih_do_ofisu_prezidenta_lyudey_n1506405",
+               "urlToImage": "https://zaxid.net/resources/photos/news/600x315_DIR/202008/1506405.jpg",
+               "publishedAt": "2020-08-15T11:03:39Z",
+               "content": null
+            },
+            {
+               "source": {
+                  "id": null,
+                  "name": "Unian.ua"
+               },
+               "author": "УНІАН редакція",
+               "title": "Власник \"Delfi\" через суд намагався заборонити евакуацію судна – Криклій - УНІАН",
+               "description": "Міністр намір судновласника назвав «злим задумом» та «божевіллям».",
+               "url": "https://www.unian.ua/incidents/tanker-delfi-v-odesi-sudnovlasnik-hotiv-zaboroniti-evakuaciyu-cherez-sud-novini-odesi-11113583.html",
+               "urlToImage": "https://images.unian.net/photos/2020_07/thumb_files/1000_545_1595600655-1593.jpg?1",
+               "publishedAt": "2020-08-15T11:00:00Z",
+               "content": "«Delfi» - , . « » «». . .« , . , - Mister Drake PC », .\r\n , \", , \"."
+            },
+            {
+               "source": {
+                  "id": null,
+                  "name": "Pravda.com.ua"
+               },
+               "author": "Українська правда",
+               "title": "Лукашенко обговорив із Путіним врегулювання \"проблем\" у Білорусі - Українська правда",
+               "description": "Президент Білорусі Олександр Лукашенко провів телефонну розмову з президентом РФ Володимиром Путіним.",
+               "url": "https://www.pravda.com.ua/news/2020/08/15/7263037/",
+               "urlToImage": "https://img.pravda.com/images/doc/4/3/43874f1-lukash-putin.jpg",
+               "publishedAt": "2020-08-15T10:47:32Z",
+               "content": null
+            },
+            {
+               "source": {
+                  "id": null,
+                  "name": "Tsn.ua"
+               },
+               "author": "Олена Капнік",
+               "title": "Протести у Білорусі: у Мінську прощаються із загиблим Олександром Тарайковським - Світ - TCH.ua - TSN UA",
+               "description": "У Мінську прощаються з 34-річним Олександром Тарайковським, який став першою жертвою масових протестів у Білорусі 10 серпня.",
+               "url": "https://tsn.ua/svit/nesut-oberemki-kviti-lampadki-ta-stayut-na-kolina-u-minsku-proschayutsya-z-pershoyu-zhertvoyu-protestiv-1606795.html",
+               "urlToImage": "https://img.tsn.ua/cached/1597484743/tsn-1bfeaf6125141ee06e055fc61b5a2fa6/thumbs/1200x630/cf/be/b35453d970eed6590fd76ba01c10becf.jpeg",
+               "publishedAt": "2020-08-15T09:35:00Z",
+               "content": ": , . . ! ! – , , ! .  1+1 video"
+            },
+            {
+               "source": {
+                  "id": null,
+                  "name": "Unian.ua"
+               },
+               "author": "УНІАН редакція",
+               "title": "\"Прийшов час\": Луческу зробив прогноз на розв'язку Ліги Європи для Шахтаря - УНІАН",
+               "description": "Головний тренер \"Динамо\" впевнений, що \"гірники\" здатні виграти турнір.",
+               "url": "https://www.unian.ua/sport/football/inter-shahtar-mircha-luchesku-zrobiv-prognoz-na-rozv-yazku-ligi-yevropi-dlya-shahtarya-novini-futbolu-11113490.html",
+               "urlToImage": "https://images.unian.net/photos/2020_07/thumb_files/1000_545_1596112868-1310.jpg?1",
+               "publishedAt": "2020-08-15T08:09:00Z",
+               "content": null
+            },
+            {
+               "source": {
+                  "id": null,
+                  "name": "24tv.ua"
+               },
+               "author": "24 Канал",
+               "title": "Співачка Alyosha втретє стала мамою - 24 Канал",
+               "description": "Українська виконавиця Alyosha народила третю дитину в одному з пологових будинків Києва. В Олени та лідера гурту \"Антитіла\" Тараса Тополі народилася донька.",
+               "url": "https://lifestyle.24tv.ua/alyosha-narodila-tretyu-ditinu-kogo-narodila-spivachka_n1374910",
+               "urlToImage": "https://24tv.ua/resources/photos/news/202007/1374910.jpg?1597478265000",
+               "publishedAt": "2020-08-15T07:42:00Z",
+               "content": ". . . , , . . , . ,Alyosha Viva.\r\n , ."
+            },
+            {
+               "source": {
+                  "id": null,
+                  "name": "Espreso.tv"
+               },
+               "author": "https://www.facebook.com/espreso.tv",
+               "title": "Новий антирекорд Covid-19 в Україні - 1 847 нових заражених - espreso.tv",
+               "description": "Протягом п'ятниці, 14 серпня 2020 року, на території України офіційно зареєстровано 1 847 нових випадків зараження коронавірусом",
+               "url": "https://espreso.tv/news/2020/08/15/novyy_antyrekord_covid_19_v_ukrayini_1_847_novykh_zarazhenykh",
+               "urlToImage": "https://static.espreso.tv/uploads/article/2780071/images/im610x343-coronavirus-photo.jpg",
+               "publishedAt": "2020-08-15T07:07:00Z",
+               "content": ", .TV.\r\n, - 89 719 (+1 847).\r\n - 2 044 (+33).\r\n - 47 430 (+633).\r\n:  : !\r\n - 40 245 (+1 181).\r\n - 146 701 (+2 061).\r\n !  Telegram-: https://t.me/espresotb"
+            },
+            {
+               "source": {
+                  "id": null,
+                  "name": "Pravda.com.ua"
+               },
+               "author": "Українська правда",
+               "title": "Зеленський про \"вагнерівців\": Несправедливе рішення, наслідки будуть трагічними - Українська правда",
+               "description": "Президент Володимир Зеленський вважає видачу бійців “Вагнера” Білоруссю Росії несправедливим рішенням, наслідки якого будуть трагічними.",
+               "url": "https://www.pravda.com.ua/news/2020/08/15/7263020/",
+               "urlToImage": "https://img.pravda.com/images/doc/9/6/96381c0-ze-larin5.jpg",
+               "publishedAt": "2020-08-15T07:06:44Z",
+               "content": "\"\" , .\r\n: Facebook\r\n: \" , ’ , , , , .\r\n . , \"\" – .\r\n, , , \"\" \".\r\n: \"\" . , – \", \".\r\n: \"-, . .\r\n -, , , – – .\r\n . , , ’ \".\r\n: , \"\" .\r\n , , \" , \".\r\n: \" \"\", - , – , : . – . \".\r\n: .\r\n : 14 ,  32 \"\", 29 . … [+194 chars]"
+            },
+            {
+               "source": {
+                  "id": null,
+                  "name": "Pingvin.pro"
+               },
+               "author": null,
+               "title": "Windows 10 отримала дві корисні функції - Pingvin Pro",
+               "description": "Microsoft випустила нову збірку Windows 10 Insider Preview. Збірка 20190 містить всього два нових поліпшення, призначених для користувачів.",
+               "url": "https://pingvin.pro/gadgets/news-gadgets/windows-10-otrymala-dvi-korysni-funkcziyi.html",
+               "urlToImage": "https://pingvin.pro/wp-content/uploads/2019/12/asus-zenbook-13-ux334-asus-zenbook-14-ux434-07-windows-10.jpg",
+               "publishedAt": "2020-08-15T06:19:13Z",
+               "content": "Microsoft Windows 10 Insider Preview. 20190 , . , .\r\n   Windows 10\r\n « ». .\r\n , . , , . « », - .\r\nWindows 10 ’ .  , Windows 10 «», , .\r\n 20190 , Microsoft , . , Microsoft Easy Anti-Cheat , Microsoft … [+167 chars]"
+            },
+            {
+               "source": {
+                  "id": null,
+                  "name": "24tv.ua"
+               },
+               "author": "Софія Кулай",
+               "title": "Легкоатлетка Магучіх – переможниця етапу Діамантової ліги, Левченко – друга - 24 Канал",
+               "description": "Українська легкоатлетка Ярослава Магучіх перемогла на перших змаганнях після рестарту сезону. За перше місце спортсменка боролась з іншою українкою Юлією Левченко.",
+               "url": "https://sport.24tv.ua/legkoatletka-maguchih-peremozhnitsya-etapu-diamantovoyi-novini-sportu_n1396412",
+               "urlToImage": "https://24tv.ua/resources/photos/news/202008/1396412.jpg?1597480689000",
+               "publishedAt": "2020-08-15T05:58:00Z",
+               "content": ". ."
+            },
+            {
+               "source": {
+                  "id": null,
+                  "name": "Ukrinform.ua"
+               },
+               "author": "Ukrinform",
+               "title": "Daimler виплатить у США понад 2 мільярди доларів через “дизельгейт” - Укрінформ. Новини України та світу",
+               "description": "Німецький автомобілебудівний концерн Daimler AG виплатить 2,2 мільярда доларів, аби врегулювати спір щодо даних щодо вмісту шкідливих речовин у вихлопних газах дизельних двигунів на території США. — Укрінформ.",
+               "url": "https://www.ukrinform.ua/rubric-world/3081718-daimler-viplatit-u-ssa-ponad-2-milardi-dolariv-cerez-dizelgejt.html",
+               "urlToImage": "https://static.ukrinform.com/photos/2020_08/thumb_files/630_360_1597469859-989.jpg",
+               "publishedAt": "2020-08-15T05:40:17Z",
+               "content": null
+            },
+            {
+               "source": {
+                  "id": null,
+                  "name": "Nv.ua"
+               },
+               "author": "Олександра Орлова",
+               "title": "Бойовики на Донбасі чотири рази порушили режим припинення вогню - НВ (українською)",
+               "description": "У п’ятницю, 14 серпня, на переважній більшості ділянок відповідальності українських підрозділів обстрілів не зафіксовано. Чотири рази бойовики порушили режим припинення вогню на Донбасі.",
+               "url": "https://nv.ua/ukr/ukraine/events/zvedennya-oos-na-donbasi-boyoviki-chotiri-razi-porushili-rezhim-tishi-novini-ukrajini-50106332.html",
+               "urlToImage": "https://nv.ua/system/Article/posters/002/218/085/original/da22156ceccfc86084cbfef3b6342b81.jpeg",
+               "publishedAt": "2020-08-15T05:14:00Z",
+               "content": "(: /Facebook) \r\n, 14 ,    .  . \r\n   '  Facebook.\r\n   .\r\n  ,       ,  .\r\n   -5     .\r\n     , 22   .\r\n '   .\r\n , 15 ,   ,    .\r\n, Ctrl + Enter\r\n:   '   ()"
+            },
+            {
+               "source": {
+                  "id": null,
+                  "name": "Football24.ua"
+               },
+               "author": "football24.ua",
+               "title": "Манчестер Сіті – Ліон: анонс матчу 1/4 фіналу Ліги чемпіонів – Зінченко з гіркими спогадами та примарними надіями — Футбол 24 - Футбол 24",
+               "description": "Англійці та французи визначать останнього півфіналіста Ліги чемпіонів 2019/20. Анонс та прогноз на м...",
+               "url": "https://football24.ua/manchester_siti_lion_anons_matchu_1_4_liga_chempioniv_15_08_2020_n616589/",
+               "urlToImage": "https://football24.ua/resources/photos/news/600x315_DIR/202008/616589.jpg",
+               "publishedAt": "2020-08-15T05:09:00Z",
+               "content": "15 , 22:00. , \r\n : ()\r\n \" 2\", - \" 24\".\r\n . . - . , . -?\r\n , , , . 1/4 \"\" , 34.\r\n 2019/20 \r\n ?\r\n 9 . ' , . . 2017 , 2018 ( 25 ), 2019 ( 27 ). .\r\n, . . - , . , .\r\n . : \" '\", . . \"\" , , .\r\n : , \r\n ( 1/4… [+253 chars]"
+            },
+            {
+               "source": {
+                  "id": null,
+                  "name": "Glavcom.ua"
+               },
+               "author": null,
+               "title": "Telegram запустив відеодзвінки в месенджері - ГЛАВКОМ",
+               "description": "Для захисту даних у відеодзвінках використовують кінцеве, або наскрізне, шифрування",
+               "url": "https://glavcom.ua/world/hitech/telegram-zapustiv-videodzvinki-v-mesendzheri-699141.html",
+               "urlToImage": "https://glavcom.ua/img/article/6991/41_main.jpg?1597451534",
+               "publishedAt": "2020-08-15T00:28:31Z",
+               "content": ", , \r\n Telegram .\r\n .\r\n Android, ' iOS, .\r\n«2020 , ', - Android ( iOS , )», – .\r\n , . , – .\r\n , , .\r\n« , ' , , : , , », – Telegram.\r\n , iOS. Telegram, , Apple ."
+            },
+            {
+               "source": {
+                  "id": null,
+                  "name": "24tv.ua"
+               },
+               "author": "Емал Набі",
+               "title": "П'ятеро українців відпустили із СІЗО у Білорусі: що відомо про їхній стан - 24 Канал",
+               "description": "Білоруські силовики вночі 14 серпня відпустили затриманих українських волонтерів Костянтина Рєуцького і Євгена Васильєва. З СІЗО випустили також ще одну затриману українську громадянку – Оксану Альошину. Згодом МЗС України додало, що станом на вечір 14 серпня…",
+               "url": "https://24tv.ua/ukrayinski-volonteri-reutskiy-vasilyev-vzhe-svobodi-novini-bilorus_n1395802",
+               "urlToImage": "https://24tv.ua/resources/photos/news/202008/1395802.jpg?1597427164000",
+               "publishedAt": "2020-08-14T17:32:00Z",
+               "content": "14 . . , 14 5 ."
+            },
+            {
+               "source": {
+                  "id": null,
+                  "name": "Unian.ua"
+               },
+               "author": "УНІАН редакція",
+               "title": "Країни ЄС \"дали зелене світло\" на введення санкцій проти Білорусі – журналіст - УНІАН",
+               "description": "Відповідні робочі групи розроблять списки, проти кого конкретно будуть запроваджені санкції.",
+               "url": "https://www.unian.ua/world/bilorus-novini-yes-pidtverdili-shcho-gotuyut-sankciji-proti-bilorusi-novini-svitu-11113223.html",
+               "urlToImage": "https://images.unian.net/photos/2020_08/thumb_files/1000_545_1597422741-1822.jpg?1",
+               "publishedAt": "2020-08-14T16:33:00Z",
+               "content": "<ul><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></… [+529 chars]"
+            },
+            {
+               "source": {
+                  "id": null,
+                  "name": "Unian.ua"
+               },
+               "author": "УНІАН редакція",
+               "title": "Білорусь охоплена протестами: що відбувається з країною просто зараз (наживо) - УНІАН",
+               "description": "Масштабні акції протесту в Білорусі розпочалися одразу після оголошення попередніх підсумків виборів.",
+               "url": "https://www.unian.ua/world/protesti-v-bilorusi-shcho-vidbuvayetsya-v-krajini-14-serpnya-situaciya-v-minsku-novini-svitu-11107988.html",
+               "urlToImage": "https://images.unian.net/photos/2020_08/thumb_files/1000_545_1597416111-8250.jpg?1",
+               "publishedAt": "2020-08-14T15:41:00Z",
+               "content": null
+            },
+            {
+               "source": {
+                  "id": null,
+                  "name": "Liga.net"
+               },
+               "author": "LIGA.net",
+               "title": "\"Apple - чудовисько\". Розробники гри Fortnite атакують корпорацію в медіа - liga.net",
+               "description": "Гру Fortnite видалили з App Store і Google Play через порушення правил оплати. У відповідь компанія-розробник подала в суд і розпочала тролінг",
+               "url": "https://ua-news.liga.net/economics/news/apple---chudovisko-rozrobniki-gri-fortnite-atakuyut-korporatsiyu-v-media",
+               "urlToImage": "https://ua-news.liga.net/images/general/2020/08/14/social-20200814163122-3722-4237557.png?v=1597421188",
+               "publishedAt": "2020-08-14T15:02:00Z",
+               "content": "Fortnite App Store Google Play . - Google Apple Inc Alphabet Inc Fortnite ,    Reuters.\r\n Epic Games , .\r\n Fortnite - , 2017 . 350 .\r\nApple 15% -30% , . Epic Games , . Apple . Google Inc.\r\n App Store… [+254 chars]"
+            },
+            {
+               "source": {
+                  "id": null,
+                  "name": "Unian.ua"
+               },
+               "author": "УНІАН редакція",
+               "title": "Гривня зміцнилася перед вихідними: свіжий курс валют - УНІАН-Економіка",
+               "description": "Курс долара знизився до 27,35 гривні, а курс євро - 32,31 гривні.",
+               "url": "https://www.unian.ua/economics/finance/kurs-valyut-17-serpnya-2020-roku-aktualniy-kurs-dolara-i-yevro-do-grivni-sogodni-novini-ukrajina-11113073.html",
+               "urlToImage": "https://images.unian.net/photos/2020_02/thumb_files/1000_545_1582286742-8010.jpg?1",
+               "publishedAt": "2020-08-14T14:40:00Z",
+               "content": null
+            },
+            {
+               "source": {
+                  "id": null,
+                  "name": "24tv.ua"
+               },
+               "author": "Андрій Шляхтін",
+               "title": "Масові сутички у Білорусі: останні новини та що відомо – фото, відео - 24 Канал",
+               "description": "У Білорусі після закінчення голосування за нового президента почалися наймасштабніші протистояння за історію незалежності держави. Несподівано високі навіть для білорусів результати перемоги Олександра Лукашенка стали приводом, аби вийти на вулиці та висловит…",
+               "url": "https://24tv.ua/zavershilisya-vibori-prezidenta-bilorusi-siloviki-novini-svitu_n1393189",
+               "urlToImage": "https://24tv.ua/resources/photos/news/202008/1393189.jpg?1597413057000",
+               "publishedAt": "2020-08-14T13:39:00Z",
+               "content": ". , . ."
+            },
+            {
+               
                "source": {
                   "id": null,
                   "name": "Pingvin.pro"

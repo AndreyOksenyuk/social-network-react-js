@@ -7,6 +7,9 @@ import UsersSelector from './UsersSelector/UsersSelector';
 
 
 let Users = (props) => {
+   const onChange = (pageNumber) => {
+      props.onSetPage(pageNumber)
+   }
 
    return (
       <div className={style.UsersPage}>
@@ -27,9 +30,10 @@ let Users = (props) => {
             />
          }
          <PaginationAntDesign
-            totalUsersCount={props.totalUsersCount}
-            onSetPage={props.onSetPage}
-
+            totalCount={props.totalUsersCount}
+            defaultPageSize={6}
+            defaultCurrent={1}
+            onChange={onChange}
          />
       </div>
    )

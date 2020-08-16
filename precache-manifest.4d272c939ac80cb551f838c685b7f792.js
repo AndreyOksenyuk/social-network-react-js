@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "821a317082a223f44725fa730faebf36",
+    "revision": "ec0c334893103b2e77aaf63d3fc92400",
     "url": "/social-network-react-js/index.html"
   },
   {
@@ -20,8 +20,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/social-network-react-js/static/css/5.c09a1251.chunk.css"
   },
   {
-    "revision": "cac731a7abad0e4dfc5e",
-    "url": "/social-network-react-js/static/css/main.99ae0e45.chunk.css"
+    "revision": "02d6ab5c264ab774d0bd",
+    "url": "/social-network-react-js/static/css/main.0b47cfbf.chunk.css"
   },
   {
     "revision": "07eb4078f244171384c9",
@@ -44,8 +44,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/social-network-react-js/static/js/5.b3da7ea2.chunk.js"
   },
   {
-    "revision": "cac731a7abad0e4dfc5e",
-    "url": "/social-network-react-js/static/js/main.d6489c39.chunk.js"
+    "revision": "02d6ab5c264ab774d0bd",
+    "url": "/social-network-react-js/static/js/main.c4224b1f.chunk.js"
   },
   {
     "revision": "bcb1cb5fa75e6fa6fbce",

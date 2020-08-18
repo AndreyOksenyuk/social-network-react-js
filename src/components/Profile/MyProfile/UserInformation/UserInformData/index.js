@@ -31,7 +31,7 @@ const UserInformData = (props) => {
             {props.user.contacts ? Object.keys(props.user.contacts).map(key => {
                return <UserSocial key={key} keyContacts={key} valueContacts={props.user.contacts[key]} />
             })
-               : <i> Загрузка...</i>
+               : <i className="fa fa-refresh fa-spin" style={{marginLeft: '20px'}}></i> 
             }
          </div>
       </div>

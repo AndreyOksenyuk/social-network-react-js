@@ -28,7 +28,7 @@ const MusicList = ({ songs, messageNoFound, onShowMore }) => {
                            <h4 className={style.title} title={song.title}>{song.title}</h4>
                            <p className={style.artistName} title={song.artist.name}>{song.artist.name}</p>
                         </div>
-                        <audio controls preload='none' onBlur={onPause} onEnded={onEnden}>
+                        <audio controls onBlur={onPause} onEnded={onEnden}>
                            <source type="audio/mpeg" src={song.preview} />
                            <p>Ваш браузер не поддерживает аудио</p>
                         </audio>

@@ -14,6 +14,9 @@
 #api Key
 src/keyAPI.js
 
+#gif
+#/gif
+
 # misc
 .DS_Store
 .env.local

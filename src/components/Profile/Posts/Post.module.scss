@@ -20,7 +20,10 @@
    width: 100%;
    padding: 0 50px;
 }
-
+.post_wrapper{
+   position: relative;
+   width: 100%;
+}
 .post {
    position: relative;
    display: flex;
@@ -130,4 +133,10 @@
    &:hover {
       color: rgb(77, 77, 77);
    }
+}
+
+.postDate{
+   position: absolute;
+   bottom: 0;
+   right: 20px;
 }

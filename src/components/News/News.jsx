@@ -2,7 +2,6 @@ import React from 'react';
 import style from './News.module.scss'
 import NewsPost from './NewsPost/NewsPost';
 import { Pagination } from 'antd';
-import { newsState } from '../../NewsState'
 
 const News = (props) => {
    let onChange = (pageNumber) => {
@@ -12,12 +11,13 @@ const News = (props) => {
       <div className={style.News}>
          <NewsPost news={props.news} />
          <div className={style.pagination}>
-            <Pagination
+            {props.totalResults && <Pagination
                defaultPageSize={20}
                defaultCurrent={1}
-               total={props.totalResults || newsState.articles.length}
+               total={props.totalResults}
                onChange={onChange}
             />
+         }
          </div>
       </div>
    )

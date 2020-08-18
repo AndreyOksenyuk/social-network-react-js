@@ -29,17 +29,19 @@ const MapPost = (props) => {
 
    return (
       <div className={style.MapPosts}>
+
          {
             posts.map((post, index) => {
-               return <React.Fragment key={post.id}>
+               return <div className={style.post_wrapper} key={post.id}>
+                  <div className={style.postDate}>{post.date}</div>
                   <div className={style.post}>
                      <div className={style.post_inner}>
                         <img src={post.avatar ? post.avatar : img} alt="ava" />
                         <i>{post.user}</i>
                      </div>
-                     <EditFilled 
-                        className={style.EditIcon} 
-                        title="Изменить пост" 
+                     <EditFilled
+                        className={style.EditIcon}
+                        title="Изменить пост"
                         onClick={() => onOpenEditForm(post.id)}
                      />
                      <DeletePost id={post.id} />
@@ -52,7 +54,7 @@ const MapPost = (props) => {
                            value={post.message}
                            onChange={onChangeEditPost}
                         />
-                        <Button type="primary" onClick={() => onSaveEditForm(post.id)} style={{marginTop: '10px'}}>Сохранить</Button>
+                        <Button type="primary" onClick={() => onSaveEditForm(post.id)} style={{ marginTop: '10px' }}>Сохранить</Button>
                      </form>
                      : <Posts
                         posts={post}
@@ -61,7 +63,7 @@ const MapPost = (props) => {
                         index={index}
                      />
                   }
-               </React.Fragment>
+               </div>
             })
          }
       </div>

@@ -32,6 +32,7 @@ let initialState = {
       user: 'User test',
       message: 'My first post!)',
       edit: false,
+      date: '13.07.2020',
       like: {
          status: true,
          count: 3,
@@ -46,11 +47,15 @@ let initialState = {
 let PROFILE_REDUCER = (state = initialState, action) => {
    switch (action.type) {
       case ADD_POST:
+         let d = new Date()
+         let month = 1 + d.getUTCMonth()
+         let date = d.getDate() + '.' + month + '.' + d.getFullYear()
          let newPost = {
             id: Date.now(),
             user: action.name,
             avatar: action.avatar,
             message: action.post,
+            date: date,
             edit: false,
             like: {
                status: false,
